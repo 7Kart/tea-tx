@@ -72,46 +72,46 @@ export default {
 
   watch: {
     offsetPerc() {
-      console.log('this.$el.style.transform', this.$el.style.transform)
-      let transformValues = this.$el.style.transform.split(/\w+\(|\);?/)[1]
-      let yOffset = parseInt(transformValues.split(',')[1], 10)
-      console.log('this.offsetPerc', this.offsetPerc)
-
       // console.log('this.offsetPerc', yOffset + this.offsetPerc)
       // let test = yOffset + this.offsetPerc;
-      // this.$el.style.transform = `translate3d(0px, ${
-      //   -50 + this.offsetPerc
-      // }%, 0px)`
+      this.$el.style.transform = `translate3d(0px, ${this.offsetPerc}%, 0px)`
     }
   },
 
   created() {
-    this.animatedScrollObserver = new IntersectionObserver(
-      (enties, observer) => {
-        enties.forEach(entry => {
-          if (entry.isIntersecting) {
-            window.addEventListener('scroll', this.scrollHandler)
-          } else if (!entry.isIntersecting) {
-            window.removeEventListener('scroll', this.scrollHandler)
-          }
-        })
-      }
-    )
+    if ('IntersectionObserver' in window) {
+      this.animatedScrollObserver = new IntersectionObserver(
+        (enties, observer) => {
+          enties.forEach(entry => {
+            if (entry.isIntersecting) {
+              window.addEventListener('scroll', this.scrollHandler)
+            } else if (!entry.isIntersecting) {
+              window.removeEventListener('scroll', this.scrollHandler)
+            }
+          })
+        }
+      )
+    }
   },
 
   mounted() {
     this.elHeight = this.$el.offsetHeight
     this.lastScrollPosition = this.$el.offsetHeight
-    this.animatedScrollObserver.observe(this.$el)
+    if (this.animatedScrollObserver != undefined)
+      this.animatedScrollObserver.observe(this.$el)
   },
 
   methods: {
     scrollHandler(e) {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop
-      let offset = scrollTop - this.$el.offsetTop
-
       let vector = this.lastScrollPosition < scrollTop ? 1 : -1
+
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop
       this.lastScrollPosition = scrollTop
+
+      let offset =
+        vector > 0
+          ? scrollTop - this.$el.offsetTop
+          : this.elHeight - (scrollTop - this.$el.offsetTop)
 
       if (offset > 0) {
         this.offsetPerc = Math.floor((100 * offset) / this.elHeight / 2)
@@ -130,7 +130,7 @@ footer {
   position: relative;
   z-index: 10;
   // transform: translate3d(0px, -50%, 0px);
-  transition: transform 0.8s ease-out;
+  transition: transform 0.2s ease-out;
 
   // &.before-scroll-enter{
   //   transform: translate3d(0px, -50%, 0px);

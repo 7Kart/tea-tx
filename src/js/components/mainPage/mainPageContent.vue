@@ -45,15 +45,7 @@
             касается не только и не столько обработки чая, сколько пути.
           </p>
         </div>
-
-        <div class="three-point-img-container">
-          <img src="/assets/img/danurwendho-adyakusuma.png" />
-          <div class="mask-container">
-            <imgMask maskVerAlign="center" maskHorAlign="flex-start" />
-            <imgMask maskVerAlign="center" maskHorAlign="space-around" />
-            <imgMask maskVerAlign="center" maskHorAlign="flex-end" />
-          </div>
-        </div>
+        <imgCircle/>    
       </container>
     </div>
 
@@ -122,6 +114,7 @@ import imgMask from '../svg/mask.vue'
 import blogLogo from '../system/BlogLogo.vue'
 import externalLink from '../svg/ExternalLink.vue'
 import footerApp from '../system/Footer.vue'
+import imgCircle from './circleImg.vue'
 
 export default {
   components: {
@@ -131,7 +124,8 @@ export default {
     imgMask,
     blogLogo,
     externalLink,
-    footerApp
+    footerApp,
+    imgCircle
   },
   mounted() {
     console.log('body init')
@@ -278,32 +272,6 @@ export default {
         }
         // @media screen and (max-width: $tableWidth) {
         // }
-      }
-    }
-
-    .three-point-img-container {
-      margin: 164px 0;
-      @media screen and (max-width: $desktopLgWidth) {
-        margin: 152px 0;
-      }
-      @media screen and (max-width: $desktopWidth) {
-        margin: 80px 0;
-      }
-      @media screen and (max-width: $phoneWidth) {
-        margin: 40px 0;
-      }
-      position: relative;
-      img {
-        width: 100%;
-      }
-      .mask-container {
-        position: absolute;
-        display: flex;
-        flex-direction: row;
-        z-index: 999;
-        top: 0;
-        width: 100%;
-        height: 100%;
       }
     }
   }
