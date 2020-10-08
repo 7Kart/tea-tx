@@ -64,8 +64,7 @@ export default {
 @keyframes coming {
   from{
     transform: translateX(-100vw);
-    opacity: 0;
-  
+    opacity: 0;  
   }
   to{
     transform: translateX(0);
