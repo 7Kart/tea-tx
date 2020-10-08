@@ -1,7 +1,7 @@
 <template>
+<div>
   <svg
-    width="100%"
-    height="100%"
+ 
     viewBox="0 0 1536 707"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -13,12 +13,14 @@
       fill="#1A2A38"
     />
   </svg>
+</div>
 </template>
 
 <style lang="scss" scoped>
-svg {
+div {
   position: absolute;
   top: 0;
   left:0;
+  width: 100%;
 }
 </style>

@@ -132,14 +132,6 @@ footer {
   // transform: translate3d(0px, -50%, 0px);
   transition: transform 0.2s ease-out;
 
-  // &.before-scroll-enter{
-  //   transform: translate3d(0px, -50%, 0px);
-  //   transition: all 2s ease-out;
-  // }
-  // &.scroll-enter{
-  //   transform: translate3d(0px, 0px, 0px);
-  // }
-
   .footer-wrapper {
     margin: 81px 0 25px 0;
     display: flex;
