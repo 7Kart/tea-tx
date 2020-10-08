@@ -1,0 +1,28 @@
+@import "vars.scss";
+
+$containerMargin    : 192px;
+$colCount           : 8;
+$gutter             : 130px;
+
+@media screen and (max-width: $desktopLgWidth) {
+    $containerMargin    : 151px;
+    $gutter             : 100px;
+}
+
+@media screen and (max-width: $desktopWidth) {
+    $colCount           : 6;
+    $containerMargin    : 168;
+    $gutter             : 77px;
+}
+
+@media screen and (max-width: $smDesktopWidth) {
+    $containerMargin    : 103;
+    $gutter             : 77px;
+
+}
+
+@media screen and (max-width: $smTableWidth) {
+    $containerMargin    : 42;
+    $colCount           : 1;
+    $gutter             : 0px;
+}
