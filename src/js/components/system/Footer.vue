@@ -54,6 +54,7 @@
 <script>
 import container from './Container.vue'
 import addressBlock from './Address.vue'
+import scrollObserver from '../../scripts/sectionIntersectionObserver.js'
 
 import footerMenuLogo from '../svg/FooterMenuLogo.vue'
 
@@ -72,25 +73,13 @@ export default {
 
   watch: {
     offsetPerc() {
-      // console.log('this.offsetPerc', yOffset + this.offsetPerc)
-      // let test = yOffset + this.offsetPerc;
       this.$el.style.transform = `translate3d(0px, ${this.offsetPerc}%, 0px)`
     }
   },
 
   created() {
     if ('IntersectionObserver' in window) {
-      this.animatedScrollObserver = new IntersectionObserver(
-        (enties, observer) => {
-          enties.forEach(entry => {
-            if (entry.isIntersecting) {
-              window.addEventListener('scroll', this.scrollHandler)
-            } else if (!entry.isIntersecting) {
-              window.removeEventListener('scroll', this.scrollHandler)
-            }
-          })
-        }
-      )
+      this.animatedScrollObserver = scrollObserver(this.scrollHandler)
     }
   },
 
@@ -101,12 +90,16 @@ export default {
       this.animatedScrollObserver.observe(this.$el)
   },
 
+  destroyed() {
+    this.animatedScrollObserver.observe(this.$el)
+  },
+
   methods: {
     scrollHandler(e) {
       let vector = this.lastScrollPosition < scrollTop ? 1 : -1
+      this.lastScrollPosition = scrollTop
 
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop
-      this.lastScrollPosition = scrollTop
 
       let offset =
         vector > 0

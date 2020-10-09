@@ -3,33 +3,57 @@
     <img
       ref="imgbckg"
       src="/assets/img/danurwendho-adyakusuma-dYxx-jPaF34-unsplash.jpg"
+      style="bottom: -100%"
     />
-
-    <svg
-      ref="svgmask"
-      viewBox="0 0 1536 707"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-    >
+    <svg viewBox="0 0 1536 484" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
         fill-rule="evenodd"
         clip-rule="evenodd"
-        d="M1536 0.714844H1V321.842C0.338162 329.139 0 336.53 0 344C0 351.47 0.338162 358.861 1 366.158V706.26H1536V0.714844ZM1 366.158C12.1797 489.426 115.717 586 241.79 586C375.327 586 483.58 477.653 483.58 344C483.58 210.347 375.327 102 241.79 102C115.717 102 12.1797 198.574 1 321.842V366.158ZM1009.79 344C1009.79 477.653 901.537 586 768 586C634.463 586 526.21 477.653 526.21 344C526.21 210.347 634.463 102 768 102C901.537 102 1009.79 210.347 1009.79 344ZM1294.21 586C1427.75 586 1536 477.653 1536 344C1536 210.347 1427.75 102 1294.21 102C1160.67 102 1052.42 210.347 1052.42 344C1052.42 477.653 1160.67 586 1294.21 586Z"
-        fill="#1A2A38"
+        d="M241.79 0H0V242V484H241.79H768H1294.21H1536V242V0H1294.21H768H241.79ZM241.79 0C375.327 0 483.58 108.347 483.58 242C483.58 375.653 375.327 484 241.79 484C108.253 484 0 375.653 0 242C0 108.347 108.253 0 241.79 0ZM768 0C901.537 0 1009.79 108.347 1009.79 242C1009.79 375.653 901.537 484 768 484C634.463 484 526.21 375.653 526.21 242C526.21 108.347 634.463 0 768 0ZM1294.21 0C1427.75 0 1536 108.347 1536 242C1536 375.653 1427.75 484 1294.21 484C1160.67 484 1052.42 375.653 1052.42 242C1052.42 108.347 1160.67 0 1294.21 0Z"
+        fill="#CED7CC"
       />
     </svg>
   </div>
 </template>
 
 <script>
-import imgMask from '../svg/mask.vue'
-import testMask from '../svg/svgMask.vue'
+import scrollObserver from '../../scripts/sectionIntersectionObserver.js'
+
 export default {
-  components: {
-    imgMask,
-    testMask
+  created() {
+    this.animatedScrollObserver = scrollObserver(this.scrollHandler)
+    this.imgHeight = 0
+    this.windowHeight = window.innerHeight / 2
   },
-  
+
+  mounted() {
+    this.animatedScrollObserver.observe(this.$el)
+    //get image background's height
+    this.lastScrollPosition = this.$el.offsetHeight
+    this.$refs.imgbckg.onload = e => {
+      this.imgHeight = e.path[0].offsetHeight
+    }
+
+    window.addEventListener('resize', () => {
+      this.windowHeight = window.innerHeight / 2
+    })
+  },
+
+  methods: {
+    scrollHandler(e) {
+      let scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      let vector = this.lastScrollPosition < scrollTop ? -1 : 1
+      this.lastScrollPosition = scrollTop
+      let visibleElPart =
+        scrollTop - this.$el.offsetTop - this.$el.offsetHeight / 2;
+      if (
+        this.$el.offsetTop + this.$el.offsetHeight <= scrollTop &&
+        visibleElPart < this.windowHeight
+      ) {
+        console.log(`start animkation`, scrollTop - this.$el.offsetTop )
+      }
+    }
+  }
 }
 </script>
 
@@ -54,6 +78,7 @@ export default {
   img {
     position: absolute;
     width: 100%;
+    // bottom: 0;
   }
   svg {
     position: relative;

@@ -14,11 +14,7 @@ const Renderer = PrerenderSPAPlugin.PuppeteerRenderer;
 const buildWebpackConfig = merge(baseWebpackConfig, {
   mode: 'production',
   plugins: [
-    // new PrerenderSPAPlugin(
-    //   // (REQUIRED) Absolute path to static root
-    //   path.join(__dirname, '../', 'dist'),
-    //   // (REQUIRED) List of routes to prerender
-    //   ['/', '/about'])
+
 
     new PrerenderSPAPlugin({
       // Required - The path to the webpack-outputted app to prerender.

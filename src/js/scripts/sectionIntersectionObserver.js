@@ -1,4 +1,4 @@
-export function initObserver(cb) {
+export default function initObserver(cb) {
     return new IntersectionObserver(
         (enties, observer) => {
             enties.forEach(entry => {
