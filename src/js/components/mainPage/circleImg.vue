@@ -3,7 +3,7 @@
     <img
       ref="imgbckg"
       src="/assets/img/danurwendho-adyakusuma-dYxx-jPaF34-unsplash.jpg"
-      style="bottom: -100%"
+      style="bottom: -80%"
     />
     <svg viewBox="0 0 1536 484" fill="none" xmlns="http://www.w3.org/2000/svg">
       <path
@@ -20,6 +20,13 @@
 import scrollObserver from '../../scripts/sectionIntersectionObserver.js'
 
 export default {
+  data() {
+    return {
+      bottom: -100,
+      top: -80
+    }
+  },
+
   created() {
     this.animatedScrollObserver = scrollObserver(this.scrollHandler)
     this.imgHeight = 0
@@ -34,24 +41,40 @@ export default {
       this.imgHeight = e.path[0].offsetHeight
     }
 
+    this.windowHeight = window.innerHeight
+
     window.addEventListener('resize', () => {
-      this.windowHeight = window.innerHeight / 2
+      this.windowHeight = window.innerHeight
     })
+
+    this.bottomAnimationPoint = this.$el.offsetHeight + this.$el.offsetTop
+    this.topAnimationPoint =
+      this.bottomAnimationPoint +
+      this.windowHeight * 0.75 -
+      this.$el.offsetHeight / 2
   },
 
   methods: {
     scrollHandler(e) {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop
+
       let vector = this.lastScrollPosition < scrollTop ? -1 : 1
       this.lastScrollPosition = scrollTop
-      let visibleElPart =
-        scrollTop - this.$el.offsetTop - this.$el.offsetHeight / 2;
+
       if (
-        this.$el.offsetTop + this.$el.offsetHeight <= scrollTop &&
-        visibleElPart < this.windowHeight
+        this.bottomAnimationPoint <= scrollTop &&
+        scrollTop < this.topAnimationPoint
       ) {
-        console.log(`start animkation`, scrollTop - this.$el.offsetTop )
+        this.$refs.imgbckg.style.bottom = `${this.setIntervalValue(scrollTop)}%`
+        console.log('this.$el.style.bottom', this.$el.style.bottom)
       }
+    },
+    setIntervalValue(curValue) {
+      return (
+        ((curValue - this.bottomAnimationPoint) * (this.top - this.bottom)) /
+          (this.topAnimationPoint - this.bottomAnimationPoint) +
+        this.bottom
+      )
     }
   }
 }
@@ -78,6 +101,7 @@ export default {
   img {
     position: absolute;
     width: 100%;
+    // transition: bottom .3s ease;
     // bottom: 0;
   }
   svg {
