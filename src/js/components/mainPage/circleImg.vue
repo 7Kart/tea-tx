@@ -31,6 +31,7 @@ export default {
     this.animatedScrollObserver = scrollObserver(this.scrollImgHandler)
     this.imgHeight = 0
     this.windowHeight = window.innerHeight / 2
+    this.interval = null
   },
 
   mounted() {
@@ -53,13 +54,13 @@ export default {
       this.windowHeight * 0.65 -
       this.$el.offsetHeight / 2
 
-    this.scrollImgHandler();
+    this.scrollImgHandler()
   },
 
   methods: {
     scrollImgHandler(e) {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop
-
+ 
       let vector = this.lastScrollPosition < scrollTop ? -1 : 1
       this.lastScrollPosition = scrollTop
 
@@ -68,7 +69,6 @@ export default {
         scrollTop < this.topAnimationPoint
       ) {
         this.$refs.imgbckg.style.bottom = `${this.setIntervalValue(scrollTop)}%`
-        console.log('this.$el.style.bottom', this.$el.style.bottom)
       }
     },
     setIntervalValue(curValue) {
@@ -103,7 +103,7 @@ export default {
   img {
     position: absolute;
     width: 100%;
-    // transition: bottom .3s ease;
+    transition: bottom 1.5s ease;
     // bottom: 0;
   }
   svg {

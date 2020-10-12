@@ -10,6 +10,10 @@
                 srcset="/assets/img/eric-barbeau-horiz.png"
                 media="(max-width: 1280px)"
               />
+              <source
+                srcset="/assets/img/eric-barbeau-medium.png"
+                media="(max-height: 1080px)"
+              />
               <img srcset="/assets/img/eric-barbeau.png" />
             </picture>
           </div>

@@ -1,4 +1,6 @@
+
 <template>
+  <!-- Footer component -->
   <footer
     id="footer"
     ref="myRef"
