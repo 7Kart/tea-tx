@@ -10,7 +10,7 @@
           <footer-menu-logo
             bckgrnd-clr="#1a5a38"
             id-el="footer-logo"
-            text-clr="#FFF"
+            text-clr="#D4D7CC"
           />
         </div>
         <div>
@@ -43,7 +43,7 @@
             <p>All rights reserved</p>
           </div>
           <div class="address-block">
-            <address-block />
+            <address-block text-color="#404040" />
           </div>
         </div>
       </div>
@@ -122,6 +122,7 @@ export default {
 footer {
   position: relative;
   z-index: 10;
+  background-color: #d4d7cc;
   // transform: translate3d(0px, -50%, 0px);
   transition: transform 0.2s ease-out;
 
@@ -131,6 +132,12 @@ footer {
     height: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
+    @media screen and (max-width: $phoneWidth) {
+      height: 100vh;
+      flex-direction: column;
+      margin: 0;
+      padding: 47px 0 25px 0;
+    }
     & > div {
       &:first-child {
         width: calc((50%-65px) / 2);
@@ -142,7 +149,8 @@ footer {
           width: calc((50%-38px) * 2 / 3);
         }
         @media screen and (max-width: $phoneWidth) {
-          width: 30%;
+          width: 50%;
+          margin-bottom: 42px;
         }
       }
       &:nth-child(2) {
@@ -203,6 +211,23 @@ footer {
             font-family: 'Raleway';
             font-style: normal;
             font-weight: 600;
+            font-size: 20px;
+            @media screen and (max-width: $desktopLgWidth) {
+              font-size: 18px;
+              line-height: 33px;
+            }
+            @media screen and (max-width: $desktopWidth) {
+              font-size: 20px;
+              line-height: 37px;
+            }
+
+            @media screen and (max-width: $smDesktopWidth) {
+              font-size: 18px;
+              line-height: 33px;
+            }
+            @media screen and (max-width: $phoneWidth) {
+              font-size: 5vw;
+            }
           }
 
           li {
@@ -237,7 +262,7 @@ footer {
       margin-top: 100px;
       @media screen and(max-width:$phoneWidth) {
         flex-direction: column-reverse;
-        align-items: center;
+        align-items: flex-start;
       }
       div {
         font-family: 'Raleway';
@@ -246,21 +271,37 @@ footer {
         font-size: 20px;
         line-height: 23px;
         @media screen and(max-width:$phoneWidth) {
-          width: 100%ж;
+          width: 100%;
         }
         @media screen and(max-width: $desktopWidth) {
           font-size: 18px;
           line-height: 21px;
         }
+        @media screen and(max-width: $phoneWidth) {
+          font-size: 15px;
+          line-height: 18px;
+        }
+
+        &.address-block {
+          @media screen and(max-width: $phoneWidth) {
+            margin: 0 0 17px 0;
+          }
+        }
 
         &.cooperative-container {
           display: flex;
           flex-wrap: wrap;
+          @media screen and(max-width: $phoneWidth) {
+            flex-wrap: nowrap;
+          }
           p {
             white-space: nowrap;
             &:first-child {
               @media screen and(max-width: $smDesktopWidth) {
                 width: 100%;
+              }
+              @media screen and(max-width: $phoneWidth) {
+                width: auto;
               }
             }
           }
@@ -271,6 +312,9 @@ footer {
             margin: 0 21px;
             @media screen and(max-width: $smDesktopWidth) {
               margin: 0 11px 0 0;
+            }
+            @media screen and(max-width: $phoneWidth) {
+              margin: 0 12px 0 12px;
             }
           }
         }

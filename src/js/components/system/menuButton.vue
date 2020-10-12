@@ -21,6 +21,9 @@ span {
   font-size: 24px;
   line-height: 37px;
   text-decoration: underline;
+  font-family: 'Spectral';
+  font-weight: bold;
+  letter-spacing: 1px;
   @media screen and(max-width: $smDesktopWidth) {
     font-size: 20px;
     line-height: 30px;

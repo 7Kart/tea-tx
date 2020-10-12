@@ -22,13 +22,13 @@ import scrollObserver from '../../scripts/sectionIntersectionObserver.js'
 export default {
   data() {
     return {
-      bottom: -100,
+      bottom: -120,
       top: -80
     }
   },
 
   created() {
-    this.animatedScrollObserver = scrollObserver(this.scrollHandler)
+    this.animatedScrollObserver = scrollObserver(this.scrollImgHandler)
     this.imgHeight = 0
     this.windowHeight = window.innerHeight / 2
   },
@@ -50,12 +50,14 @@ export default {
     this.bottomAnimationPoint = this.$el.offsetHeight + this.$el.offsetTop
     this.topAnimationPoint =
       this.bottomAnimationPoint +
-      this.windowHeight * 0.75 -
+      this.windowHeight * 0.65 -
       this.$el.offsetHeight / 2
+
+    this.scrollImgHandler();
   },
 
   methods: {
-    scrollHandler(e) {
+    scrollImgHandler(e) {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop
 
       let vector = this.lastScrollPosition < scrollTop ? -1 : 1

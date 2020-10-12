@@ -10,7 +10,7 @@
       </div>
       <div class="promo-content">
         <next-slide />
-        <p>
+        <p ref="promoText">
           «Короткое описание чайной компании, которая находится в Китае с 2010
           года»
         </p>
@@ -40,7 +40,11 @@ export default {
     nextSlide,
     mainMenu
   },
-  
+  mounted() {
+    this.$nextTick(() => {
+      this.$refs.promoText.classList.add('appearance-promo-text')
+    })
+  },
   methods: {
     onMenuToggle() {
       this.$emit('menuToggle')
@@ -49,7 +53,7 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import '../../../assets/scss/utils/vars.scss';
 @import '../../../assets/scss/utils/mixins.scss';
 
@@ -93,6 +97,8 @@ export default {
     justify-content: space-between;
     align-items: center;
     height: 100%;
+    perspective: 500px;
+    transform-style: preserve-3d;
     @media screen and (max-width: $smTableWidth) {
       align-items: flex-start;
     }
@@ -105,6 +111,16 @@ export default {
       line-height: 136%;
       color: white;
       width: 703px;
+
+      transform: translate(0px, 100%) rotateX(-45deg);
+      opacity: 0;
+      &.appearance-promo-text {
+        transition: all 1.5s ease;
+        transition-delay: .1s;
+
+        transform: rotateX(0) translate(0px, 0px);
+        opacity: 1;
+      }
 
       @media screen and (max-width: $desktopLgWidth) {
         font-size: 32px;

@@ -1,5 +1,5 @@
 <template>
-  <div class="address-container">
+  <div :style="compStyle" class="address-container">
     <svg
       width="42"
       height="31"
@@ -23,6 +23,24 @@
   </div>
 </template>
 
+<script>
+export default {
+  props:{
+    textColor: {
+      type: String,
+      default: "#FFF"
+    }
+  },
+  computed:{
+    compStyle(){
+      return {
+        "text-color": this.textColor
+      }
+    }
+  }
+}
+</script>
+
 <style lang="scss">
 @import '../../../assets/scss/utils/vars.scss';
 
@@ -41,7 +59,7 @@
     font-weight: normal;
     font-size: 20px;
     line-height: 23px;
-    color: $neutral-primary;
+    // color: $neutral-primary;
     @media screen and(max-width:$desktopWidth) {
       font-size: 18px;
     }

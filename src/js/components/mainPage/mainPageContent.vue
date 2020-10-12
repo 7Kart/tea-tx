@@ -45,7 +45,7 @@
             касается не только и не столько обработки чая, сколько пути.
           </p>
         </div>
-        <imgCircle/>    
+        <imgCircle />
       </container>
     </div>
 
@@ -66,6 +66,7 @@
                 id="project-link"
                 arrow-text="Проекты и партнёры"
                 arr-color="#404040"
+                hoverColor="#47645F"
               />
             </router-link>
           </div>
@@ -201,8 +202,9 @@ export default {
           }
           p {
             font-family: 'Spectral';
-            font-weight: 600;
+            font-weight: 500;
             font-size: 21px;
+            line-height: 34px;
             padding: 116px 0 80px 0;
             @media screen and (max-width: $desktopHDWidth) {
               padding: 80px 0 80px 0;
@@ -210,11 +212,13 @@ export default {
             @media screen and (max-width: $desktopLgWidth) {
               padding: 96px 0 80px 0;
               font-size: 18px;
+              line-height: 28px;
             }
             @media screen and (max-width: $desktopWidth) {
               padding: 38px 0 46px 0;
-
+              line-height: 34px;
               font-size: 21px;
+              line-height: 28px;
             }
             @media screen and (max-width: $smDesktopWidth) {
               padding: 38px 0 38px 0;
@@ -234,7 +238,7 @@ export default {
     }
   }
   #second-section {
-    margin-top: 15px;
+    margin-top: 25px;
     .column-text-container {
       display: flex;
       flex-direction: row;
@@ -247,7 +251,7 @@ export default {
         color: $neutral-primary;
         font-family: 'Spectral';
 
-        font-weight: 600;
+        font-weight: 500;
         font-size: 21px;
         line-height: 165%;
         width: calc(50% - 130px);
@@ -295,7 +299,7 @@ export default {
       }
       .text-container {
         color: $neutral-primary;
-        font-weight: 600;
+        font-weight: 500;
         font-size: 21px;
         line-height: 165%;
         color: $neutral-primary;
@@ -350,8 +354,13 @@ export default {
   }
 
   #forth-section {
-    background-color: $main-theme;
-    position:relative;
+    background: linear-gradient(
+        70.77deg,
+        #1a5a38 1.04%,
+        rgba(30, 114, 69, 0.87) 100%
+      ),
+      #1a5a38;
+    position: relative;
     z-index: 30;
     .sub-section-blog-container {
       justify-content: space-between;
@@ -392,9 +401,9 @@ export default {
         }
         p {
           margin-bottom: 80px;
-          font-family: "Spectral";
+          font-family: 'Spectral';
           font-style: normal;
-          font-weight: 600;
+          font-weight: 500;
           font-size: 21px;
           line-height: 165%;
           @media screen and (max-width: $desktopLgWidth) {

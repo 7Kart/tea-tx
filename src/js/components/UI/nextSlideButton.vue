@@ -22,9 +22,9 @@
 export default {
   methods: {
     onNextSlide() {
-      this.$scrollTo('#first-section', 300, {
+      this.$scrollTo('#first-section', 800, {
         container: 'body',
-        duration: 500,
+        // duration: 500,
         easing: 'ease',
         offset: 0,
         force: true,
@@ -87,6 +87,8 @@ export default {
     line-height: 138.2% !important;
     text-align: center;
     font-family: 'Raleway';
+    font-weight: bold;
+    letter-spacing:1px;
     @media screen and (max-width: $smTableWidth) {
       font-size: 15px !important;
       line-height: 138% !important;

@@ -54,17 +54,21 @@ export default {
 <style lang="scss" scoped>
 @import '../../../assets/scss/utils/vars.scss';
 
-
 a {
   display: flex;
   cursor: pointer;
-  font-family: Spectral;
+  font-family: 'Spectral';
   font-style: normal;
   font-weight: bold;
   font-size: 26px;
   line-height: 176.9%;
   align-items: center;
-
+  text-decoration: underline;
+  transition: color.2s ease;
+  &:hover {
+    color: #d85c4e !important;
+    transition: color.2s ease;
+  }
   @media screen and (max-width: $desktopLgWidth) {
     font-size: 22px;
   }
@@ -76,6 +80,11 @@ a {
   }
 
   svg {
+    path {
+      &:hover {
+        fill: #d85c4e !important;
+      }
+    }
     margin-left: 36px;
   }
 }

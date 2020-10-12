@@ -1,8 +1,7 @@
 <template>
-  <span :style="textStyle">
-    {{ arrowText }}
-
-    <svg
+  <span :style="textStyle" @mouseover="onMouseOver" @mouseout="onMouseout">
+    {{ arrowText
+    }}<svg
       :width="arrWidth"
       :height="arrHeight"
       :viewBox="viewBox"
@@ -10,6 +9,7 @@
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
+        ref="svgAr"
         fill-rule="evenodd"
         clip-rule="evenodd"
         d="M59.7498 14.4841L61.3353 16L69.6506 8.04995L61.2307 0L59.6453 1.51583L65.3814 7.00001L0 7V9L65.4859 9.00001L59.7498 14.4841Z"
@@ -31,6 +31,16 @@ export default {
       }
     }
   },
+  methods: {
+    onMouseOver() {
+      this.$el.style.color = this.hoverColor
+      this.$refs.svgAr.style.fill = this.hoverColor
+    },
+    onMouseout() {
+      this.$refs.svgAr.style.fill = this.arrColor
+      this.$el.style.color = this.arrColor
+    }
+  },
   props: {
     arrWidth: {
       type: String,
@@ -47,6 +57,10 @@ export default {
     arrowText: {
       type: String,
       default: '#EE5B5B'
+    },
+    hoverColor: {
+      type: String,
+      default: '#D85C4E'
     }
   }
 }
@@ -62,6 +76,11 @@ span {
   line-height: 176.9%;
   text-decoration-line: underline;
 
+  transition: color 0.2s ease;
+  &:hover {
+    transition: color 0.2s ease;
+  }
+
   @media screen and (max-width: $desktopLgWidth) {
     font-size: 22px;
   }
@@ -71,6 +90,7 @@ span {
   @media screen and (max-width: $phoneWidth) {
     font-size: 20px;
   }
+
   svg {
     margin-left: 24px;
   }

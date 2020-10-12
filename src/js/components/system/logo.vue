@@ -1,6 +1,8 @@
 <template>
   <div class="logo">
     <svg
+      ref="svgLogo"
+      class="flip"
       width="976"
       height="145"
       viewBox="0 0 976 145"
@@ -18,10 +20,13 @@
 </template>
 
 <script>
-
-
 export default {
-
+  mounted() {
+    console.log(`logo init`)
+    this.$nextTick(() => {
+      this.$refs.svgLogo.classList.add('appearance-logo')
+    })
+  }
 }
 </script>
 
@@ -33,9 +38,21 @@ export default {
   align-items: center;
   color: white;
   justify-content: flex-end;
+  perspective: 500px;
+  transform-style: preserve-3d;
 
   @media screen and (max-width: $phoneWidth) {
     justify-content: center;
+  }
+
+  .flip {
+    transform: translate(0px, 100%) rotateX(-45deg);
+    opacity: 0;
+    &.appearance-logo {
+      transition: all 1.5s ease;
+      transform: rotateX(0) translate(0px, 0px);
+      opacity: 1;
+    }
   }
 }
 </style>
