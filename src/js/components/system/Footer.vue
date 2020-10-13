@@ -134,9 +134,9 @@ footer {
     height: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
-    @media screen and (max-width: $phoneWidth) {
-      height: 100vh;
+    @media screen and (max-width: $phoneWidth) {    
       flex-direction: column;
+      flex-wrap: nowrap;
       margin: 0;
       padding: 47px 0 25px 0;
     }
@@ -265,6 +265,7 @@ footer {
       @media screen and(max-width:$phoneWidth) {
         flex-direction: column-reverse;
         align-items: flex-start;
+        margin-top: 50px;
       }
       div {
         font-family: 'Raleway';
@@ -295,6 +296,9 @@ footer {
           flex-wrap: wrap;
           @media screen and(max-width: $phoneWidth) {
             flex-wrap: nowrap;
+          }
+          @media screen and(max-width: $iPhoneWidthPlus) {
+            font-size: 3vw;
           }
           p {
             white-space: nowrap;
