@@ -1,16 +1,13 @@
 <template>
   <div class="photo-circle">
-      <img :src="instaSrc" width="size"/>
+    <img :src="instaSrc"  />
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    size: {
-      type: String,
-      default: '200px'
-    },
+   
     instaSrc: {
       type: String,
       default: null
@@ -18,3 +15,13 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.photo-circle {
+  img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+  }
+}
+</style>

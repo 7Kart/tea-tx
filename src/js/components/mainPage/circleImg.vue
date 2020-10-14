@@ -71,6 +71,7 @@ export default {
         this.$refs.imgbckg.style.bottom = `${this.setIntervalValue(scrollTop)}%`
       }
     },
+    
     setIntervalValue(curValue) {
       return (
         ((curValue - this.bottomAnimationPoint) * (this.top - this.bottom)) /

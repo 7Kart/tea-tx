@@ -4,43 +4,19 @@
       <container>
         <h2>На рынке с 2012 года</h2>
       </container>
-      <div class="insta-image-container">
-        <!-- <insta-photo :instaSrc="instaImg"/> -->
-      </div>
+      <insta-photo />
     </div>
   </section>
 </template>
 
 <script>
 import container from '../system/Container.vue'
-import instaPhoto from '../UI/instaPhoto.vue'
-import axios from 'axios'
+import instaPhoto from '../system/InstaPhotos.vue'
 
 export default {
   components: {
     container,
     instaPhoto
-  },
-
-  data() {
-    return {
-      instaImg: []
-    }
-  },
-
-  created() {
-    axios.get('https://www.instagram.com/tea_tx/?__a=1').then(result => {
-      const media = result.data.graphql.user.edge_owner_to_timeline_media.edges
-      this.instaImg = media.slice(0, 4).map((el, index) => {
-        return {
-          imgRes: el.node.thumbnail_resources.map(res => {
-            return res.src
-          })
-        }
-      })
-      console.log(`this.instaImg`, this.instaImg);
-          
-    })
   }
 }
 </script>
@@ -56,6 +32,7 @@ section {
     ),
     #1a5a38;
   padding: 164px 0 164px 0;
+  min-height: 100vh;
 
   @media screen and (max-width: $desktopLgWidth) {
     padding: 152px 0 152px 0;
