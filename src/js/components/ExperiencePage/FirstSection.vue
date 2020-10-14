@@ -8,10 +8,7 @@
         <chinaMap />
       </div>
       <container>
-        <div class="content-container-flex">
-          <div class="map-container-mobile">
-            <chinaMap />
-          </div>
+        <div class="sub-content-container">
           <div class="about-us-text-container">
             <h2>Наш Опыт</h2>
             <p>
@@ -20,6 +17,10 @@
               нас к жизни в Китае. Теперь, оглядываясь назад, можно увидеть как
               путь вел нас в эту
             </p>
+          </div>
+
+          <div class="map-container-mobile">
+            <chinaMap />
           </div>
         </div>
       </container>
@@ -51,11 +52,62 @@ export default {
 
 section {
   background-color: $background-color;
-  height: 100vh;
-  overflow: hidden;
-
+  // height: 100vh;
+  overflow-x: hidden;
+  min-height: 100vh;
   .content-container {
-    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 150px;
+    @media screen and (max-width: $desktopLgWidth) {
+      margin-top: 38px;
+    }
+
+    @media screen and (max-width: $desktopWidth) {
+      margin-top: 96px;
+    }
+
+    @media screen and (max-width: $smDesktopWidth) {
+      margin-top: 104px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+      margin-top: 90px;
+      flex-direction: column-reverse;
+    }
+    .container-grid {
+      @media screen and (min-width: $desktopLgWidth) {
+        margin-left: 130px;
+      }
+
+      @media screen and (min-width: $desktopWidth) {
+        margin-left: 50px;
+      }
+
+      @media screen and (min-width: $desktopWidth) {
+        margin-left: 50px;
+      }
+
+      @media screen and (min-width: $smDesktopWidth) {
+        margin-left: 77px;
+      }
+
+      width: calc(50%-190px);
+      @media screen and (max-width: $smDesktopWidth) {
+        width: calc(50%-251px);
+      }
+
+      @media screen and (max-width: $desktopWidth) {
+        width: calc(50%-205px);
+      }
+
+      @media screen and (max-width: $smDesktopWidth) {
+        width: 100%;
+      }
+      @media screen and (max-width: $phoneWidth) {
+        width: auto;
+      }
+    }
     .map-container {
       position: relative;
       width: 50%;
@@ -87,7 +139,7 @@ section {
       //   margin: 0 103px 0 103px;
       // }
     }
-    .content-container-flex {
+    .sub-content-container {
       .map-container-mobile {
         display: none;
         @media screen and (max-width: $smDesktopWidth) {
@@ -99,7 +151,66 @@ section {
       }
 
       .about-us-text-container {
-  
+        @media screen and (max-width: $smDesktopWidth) {
+          margin-bottom: 26px;
+        }
+        @media screen and (max-width: $phoneWidth) {
+          margin-bottom: 14px;
+        }
+        h2 {
+          font-family: 'Spectral';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 82px;
+          line-height: 100%;
+          color: #1a5a38;
+          @media screen and (max-width: $desktopLgWidth) {
+            font-size: 56px;
+            line-height: 100%;
+          }
+
+          @media screen and (max-width: $smDesktopWidth) {
+            font-size: 48px;
+            line-height: 100%;
+          }
+
+          @media screen and (max-width: $phoneWidth) {
+            font-size: 42px;
+            line-height: 100%;
+          }
+        }
+
+        p {
+          font-family: 'Spectral';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 21px;
+          line-height: 165%;
+          padding-top: 116px;
+          @media screen and (max-width: $desktopLgWidth) {
+            font-size: 18px;
+            line-height: 156%;
+            padding-top: 60px;
+          }
+
+          @media screen and (max-width: $desktopWidth) {
+            font-size: 21px;
+            line-height: 165%;
+            padding-top: 60px;
+          }
+
+          @media screen and (max-width: $smDesktopWidth) {
+            padding-top: 38px;
+            font-size: 18px;
+            line-height: 156%;
+          }
+
+          @media screen and (max-width: $phoneWidth) {
+            padding-top: 42px;
+            font-size: 18px;
+            line-height: 156%;
+          }
+        }
         // @media screen and (max-width: $smDesktopWidth) {
         //   margin-left: 0;
         // }
