@@ -6,8 +6,7 @@
 
 <script>
 export default {
-  props: {
-   
+  props: {   
     instaSrc: {
       type: String,
       default: null

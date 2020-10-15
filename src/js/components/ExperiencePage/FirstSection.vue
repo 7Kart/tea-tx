@@ -58,7 +58,7 @@ section {
   .content-container {
     display: flex;
     align-items: center;
-    margin-top: 150px;
+    margin-top: 39px;
     @media screen and (max-width: $desktopLgWidth) {
       margin-top: 38px;
     }

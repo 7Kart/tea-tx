@@ -88,18 +88,43 @@ export default {
   .insta-wrapper {
     display: flex;
     flex-wrap: wrap;
-    #insta-photo-1 {
-      width: 380px;
-      height: 380px;
+    height: 100%;
+    align-items: stretch;
+    width: 88%;
+    @media screen and (max-width: $desktopLgWidth) {
+      width: 86%;
+    }
+    @media screen and (max-width: $desktopWidth) {
+      width: 100%;
+    }
+    @media screen and (max-width: $smDesktopWidth) {
+      width: 88.2%;
+    }
+    margin: auto;
+    .circle-inform-block {
+      font-family: 'Spectral';
+      font-weight: 500;
+      line-height: 100%;
+    }
 
+    #insta-photo-1 {
+      width: 19%;
+      height: 19%;
+      order: 1;
+      margin-right: 8.7%;
       @media screen and (max-width: $desktopLgWidth) {
-        width: 242px;
-        height: 242px;
+        width: 20%;
+        height: 20%;
+        margin-right: 7%;
       }
 
       @media screen and (max-width: $desktopWidth) {
-        width: 240px;
-        height: 240px;
+        width: 20.2%;
+        height: 20.2%;
+        margin-right: 7.2%;
+      }
+
+      @media screen and (max-width: $smDesktopWidth) {
       }
 
       @media screen and (max-width: $phoneWidth) {
@@ -109,11 +134,14 @@ export default {
     }
 
     #insta-photo-2 {
-      width: 268px;
-      height: 268px;
+      width: 15.7%;
+      height: 15.7%;
+      order: 5;
+      margin: 0 17.3% 0 12.5%;
       @media screen and (max-width: $desktopLgWidth) {
-        width: 208px;
-        height: 208px;
+        margin: 0 15.5% 0 10.3%;
+        width: 17.1%;
+        height: 17.1%;
       }
 
       @media screen and (max-width: $desktopWidth) {
@@ -128,16 +156,23 @@ export default {
     }
 
     #insta-photo-3 {
-      width: 267px;
-      height: 267px;
+      width: 18.8%;
+      height: 18.8%;
+      order: 4;
+      margin: 70px 0 0 0;
       @media screen and (max-width: $desktopLgWidth) {
-        width: 198px;
-        height: 198px;
+        margin: 41px 0 0 0;
+        width: 19.2%;
+        height: 19.2%;
       }
 
       @media screen and (max-width: $desktopWidth) {
-        width: 195px;
-        height: 195px;
+        width: 19.7%;
+        height: 19.7%;
+      }
+
+      @media screen and (max-width: $smDesktopWidth) {
+        order: 3;
       }
 
       @media screen and (max-width: $phoneWidth) {
@@ -147,11 +182,12 @@ export default {
     }
 
     #insta-photo-4 {
-      width: 321px;
-      height: 321px;
+      order: 7;
+      width: 15.7%;
+      height: 15.7%;
       @media screen and (max-width: $desktopLgWidth) {
-        width: 245px;
-        height: 245px;
+        width: 16.3%;
+        height: 16.3%;
       }
 
       @media screen and (max-width: $desktopWidth) {
@@ -166,37 +202,49 @@ export default {
     }
 
     #text-info-1 {
-      width: 281px;
-      height: 281px;
+      width: 16.5%;
       background-color: #fff;
+      order: 2;
+      margin: 100px 6.8% 0 0;
+      text-align: center;
+      color: #47645f;
+      font-size: 36px;
+      line-height: 100%;
       @media screen and (max-width: $desktopLgWidth) {
-        width: 216px;
-        height: 216px;
+        width: 17.8%;
+        font-size: 26px;
+        margin: 35px 6.7% 0 0;
       }
 
       @media screen and (max-width: $desktopWidth) {
-        width: 216px;
-        height: 216px;
+        width: 18.3%;
+        margin: 35px 6.9% 0 0;
       }
 
       @media screen and (max-width: $smDesktopWidth) {
         width: 211px;
         height: 211px;
+        font-size: 27px;
+        order: 4;
       }
       @media screen and (max-width: $phoneWidth) {
         width: 157px;
         height: 157px;
+        font-size: 16.7066px;
       }
     }
 
     #text-info-2 {
       background-color: transparent;
       border: 2px solid #fff;
-      width: 224px;
-      height: 224px;
+      width: 13%;
+      height: 13%;
+      order: 6;
+      margin: -60px 7.6% 0 0;
       @media screen and (max-width: $desktopLgWidth) {
-        width: 177px;
-        height: 177px;
+        width: 14.5%;
+        height: 14.5%;
+        margin: -39px 8.3% 0 0;
       }
 
       @media screen and (max-width: $desktopWidth) {
@@ -207,6 +255,7 @@ export default {
       @media screen and (max-width: $smDesktopWidth) {
         width: 167px;
         height: 167px;
+        order: 2;
       }
       @media screen and (max-width: $phoneWidth) {
         width: 155px;
@@ -217,25 +266,34 @@ export default {
     #text-info-3 {
       background-color: transparent;
       border: 2px solid #ea5949;
-      width: 380px;
-      height: 380px;
+      color: #ea5949;
+      font-size: 36px;
+      width: 22.3%;
+      order: 3;
+      margin: -50px 7.6% 0 0;
+
       @media screen and (max-width: $desktopLgWidth) {
-        width: 284px;
-        height: 284px;
+        width: 23.4%;
+        margin: -65px 5.6% 0 0;
       }
 
       @media screen and (max-width: $desktopWidth) {
-        width: 284px;
-        height: 284px;
+        width: 23.8%;
+        margin: -36px 3.7% 0 0;
       }
 
       @media screen and (max-width: $smDesktopWidth) {
         width: 283px;
         height: 283px;
+        order: 5;
       }
       @media screen and (max-width: $phoneWidth) {
         width: 197px;
         height: 197px;
+      }
+      .circle-header {
+        font-size: 102px;
+        line-height: 165.9%;
       }
     }
   }

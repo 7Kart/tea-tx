@@ -1,6 +1,6 @@
 <template>
   <div class="info-circle">
-    <h3>{{ headerContent }}</h3>
+    <h3 class="circle-header">{{ headerContent }}</h3>
     <p>{{ textContent }}</p>
   </div>
 </template>
@@ -16,17 +16,31 @@ export default {
       type: String,
       default: ''
     }
+  },
+  mounted() {
+    this.setHeight();
+    window.addEventListener('resize', ()=>{
+      this.setHeight();
+    })
+  },
+  methods: {
+    setHeight() {
+      this.$el.style.height = `${this.$el.offsetWidth}px`;
+    }
   }
 }
 </script>
 
 <style lang="scss" scoped>
 .info-circle {
-    border-radius: 50%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  h2{
+    font-size: initial;
+  }
 }
 </style>
