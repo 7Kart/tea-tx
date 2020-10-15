@@ -91,6 +91,7 @@ export default {
     height: 100%;
     align-items: stretch;
     width: 88%;
+    align-items: center;
     @media screen and (max-width: $desktopLgWidth) {
       width: 86%;
     }
@@ -125,6 +126,9 @@ export default {
       }
 
       @media screen and (max-width: $smDesktopWidth) {
+        width: 26.9%;
+        height: 26.9%;
+        margin-right: 12.3%;
       }
 
       @media screen and (max-width: $phoneWidth) {
@@ -145,8 +149,16 @@ export default {
       }
 
       @media screen and (max-width: $desktopWidth) {
-        width: 203px;
-        height: 203px;
+        width: 17%;
+        height: 17%;
+        margin: 0 18.3% 0 9.5%;
+      }
+
+      @media screen and (max-width: $smDesktopWidth) {
+        order: 6;
+        width: 22.7%;
+        height: 22.7%;
+        margin: 0 17.4% 0 9%;
       }
 
       @media screen and (max-width: $phoneWidth) {
@@ -173,6 +185,9 @@ export default {
 
       @media screen and (max-width: $smDesktopWidth) {
         order: 3;
+        width: 24.2%;
+        height: 24.2%;
+        margin: -68px 0 0 0;
       }
 
       @media screen and (max-width: $phoneWidth) {
@@ -191,8 +206,13 @@ export default {
       }
 
       @media screen and (max-width: $desktopWidth) {
-        width: 236px;
-        height: 236px;
+        width: 16.5%;
+        height: 16.5%;
+      }
+
+      @media screen and (max-width: $smDesktopWidth) {
+        width: 21.8%;
+        height: 21.8%;
       }
 
       @media screen and (max-width: $phoneWidth) {
@@ -222,8 +242,8 @@ export default {
       }
 
       @media screen and (max-width: $smDesktopWidth) {
-        width: 211px;
-        height: 211px;
+        width: 23.6%;
+        margin: 0 7.2% 0 29.3%;
         font-size: 27px;
         order: 4;
       }
@@ -238,24 +258,23 @@ export default {
       background-color: transparent;
       border: 2px solid #fff;
       width: 13%;
-      height: 13%;
       order: 6;
       margin: -60px 7.6% 0 0;
       @media screen and (max-width: $desktopLgWidth) {
         width: 14.5%;
-        height: 14.5%;
         margin: -39px 8.3% 0 0;
       }
 
       @media screen and (max-width: $desktopWidth) {
-        width: 177px;
-        height: 177px;
+        width: 14.8%;
+        margin: -23px 7.8% 0 0;
       }
 
       @media screen and (max-width: $smDesktopWidth) {
-        width: 167px;
-        height: 167px;
+        width: 18.7%;
+        height: 18.7%;
         order: 2;
+        margin: 0 16.7% 0 0;
       }
       @media screen and (max-width: $phoneWidth) {
         width: 155px;
@@ -283,8 +302,10 @@ export default {
       }
 
       @media screen and (max-width: $smDesktopWidth) {
-        width: 283px;
-        height: 283px;
+        width: 31.7%;
+        height: 31.7%;
+        margin: -20px 0 0 0;
+
         order: 5;
       }
       @media screen and (max-width: $phoneWidth) {
