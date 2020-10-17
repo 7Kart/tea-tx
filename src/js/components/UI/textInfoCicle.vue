@@ -18,20 +18,21 @@ export default {
     }
   },
   mounted() {
-    this.setHeight();
-    window.addEventListener('resize', ()=>{
-      this.setHeight();
+    this.setHeight()
+    window.addEventListener('resize', () => {
+      this.setHeight()
     })
   },
   methods: {
     setHeight() {
-      this.$el.style.height = `${this.$el.offsetWidth}px`;
+      this.$el.style.height = `${this.$el.offsetWidth}px`
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+
 .info-circle {
   border-radius: 50%;
   display: flex;
@@ -39,8 +40,5 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
-  h2{
-    font-size: initial;
-  }
 }
 </style>

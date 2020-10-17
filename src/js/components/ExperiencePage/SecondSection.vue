@@ -31,23 +31,23 @@ section {
       rgba(30, 114, 69, 0.87) 100%
     ),
     #1a5a38;
-  padding: 164px 0 164px 0;
+  padding: 164px 0 0 0;
   min-height: 100vh;
 
   @media screen and (max-width: $desktopLgWidth) {
-    padding: 152px 0 152px 0;
+    padding: 152px 0 0 0;
   }
 
   @media screen and (max-width: $desktopWidth) {
-    padding: 116px 0 80px 0;
+    padding: 116px 0 0 0;
   }
 
   @media screen and (max-width: $smDesktopWidth) {
-    padding: 104px 0 80px 0;
+    padding: 104px 0 0 0;
   }
 
   @media screen and (max-width: $phoneWidth) {
-    padding: 90px 0 80px 0;
+    padding: 90px 0 0 0;
   }
 
   h2 {

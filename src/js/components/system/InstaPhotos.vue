@@ -47,8 +47,33 @@ export default {
 
   data() {
     return {
-      instaImg: []
+      instaImg: [],
+      windowWidth:
+        document.documentElement.clientWidth || document.body.clientWidth
     }
+  },
+
+  computed:{
+    textStyle(){
+      if(this.windowWidth <= 1440){
+ 
+      }else if(this.windowWidth <= 1280){
+
+      }else if(this.windowWidth <= 1024){
+
+      }else if(this.windowWidth <= 480){
+
+      }else{
+
+      }
+    }
+  },
+
+  mounted() {
+    window.addEventListener('resize', () => {
+      this.windowWidth =
+        document.documentElement.clientWidth || document.body.clientWidth;
+    });
   },
 
   created() {
@@ -61,7 +86,6 @@ export default {
           })
         }
       })
-      console.log(`this.instaImg`, this.instaImg)
     })
   }
 }
@@ -89,7 +113,6 @@ export default {
     display: flex;
     flex-wrap: wrap;
     height: 100%;
-    align-items: stretch;
     width: 88%;
     align-items: center;
     @media screen and (max-width: $desktopLgWidth) {
@@ -101,6 +124,14 @@ export default {
     @media screen and (max-width: $smDesktopWidth) {
       width: 88.2%;
     }
+
+    @media screen and (max-width: $phoneWidth) {
+      width: 88.2%;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: center;
+    }
+
     margin: auto;
     .circle-inform-block {
       font-family: 'Spectral';
@@ -132,8 +163,10 @@ export default {
       }
 
       @media screen and (max-width: $phoneWidth) {
-        width: 155px;
-        height: 155px;
+        order: 5;
+        width: 41.6%;
+        height: 41.6%;
+        margin: -20% 50% 0 0;
       }
     }
 
@@ -162,8 +195,9 @@ export default {
       }
 
       @media screen and (max-width: $phoneWidth) {
-        width: 172px;
-        height: 172px;
+        width: 41.6%;
+        height: 41.6%;
+        margin: -10% 0 0 30%;
       }
     }
 
@@ -191,8 +225,10 @@ export default {
       }
 
       @media screen and (max-width: $phoneWidth) {
-        width: 165px;
-        height: 165px;
+        order: 2;
+        width: 47.3%;
+        height: 47.3%;
+        margin: 2px 0 0 50%;
       }
     }
 
@@ -216,6 +252,7 @@ export default {
       }
 
       @media screen and (max-width: $phoneWidth) {
+        display: none;
         width: 184px;
         height: 184px;
       }
@@ -248,8 +285,10 @@ export default {
         order: 4;
       }
       @media screen and (max-width: $phoneWidth) {
-        width: 157px;
-        height: 157px;
+        width: 42.2%;
+        height: 42.2%;
+        margin: 9px 0 0 45%;
+
         font-size: 16.7066px;
       }
     }
@@ -277,8 +316,10 @@ export default {
         margin: 0 16.7% 0 0;
       }
       @media screen and (max-width: $phoneWidth) {
-        width: 155px;
-        height: 155px;
+        width: 41.6%;
+        height: 41.6%;
+        margin: -32% 44.3% 0 0;
+        order: 3;
       }
     }
 
@@ -290,7 +331,9 @@ export default {
       width: 22.3%;
       order: 3;
       margin: -50px 7.6% 0 0;
-
+      h3 {
+        color: red !important;
+      }
       @media screen and (max-width: $desktopLgWidth) {
         width: 23.4%;
         margin: -65px 5.6% 0 0;
@@ -305,12 +348,13 @@ export default {
         width: 31.7%;
         height: 31.7%;
         margin: -20px 0 0 0;
-
         order: 5;
       }
       @media screen and (max-width: $phoneWidth) {
-        width: 197px;
-        height: 197px;
+        order: 1;
+        width: 52.9%;
+        height: 52.9%;
+        margin: 0 0 0 0;
       }
       .circle-header {
         font-size: 102px;
