@@ -1,5 +1,5 @@
 <template>
-  <div class="info-circle">
+  <div class="info-circle" :class="fontClass">
     <h3 class="circle-header">{{ headerContent }}</h3>
     <p>{{ textContent }}</p>
   </div>
@@ -15,6 +15,9 @@ export default {
     textContent: {
       type: String,
       default: ''
+    },
+    fontClass: {
+      type: String
     }
   },
   mounted() {
@@ -32,6 +35,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../../assets/scss/utils/vars.scss';
 
 .info-circle {
   border-radius: 50%;
@@ -40,5 +44,97 @@ export default {
   justify-content: center;
   align-items: center;
   text-align: center;
+}
+
+.big-circle {
+  h3 {
+    font-size: 102px;
+    line-height: 165.9%;
+    @media screen and (max-width: $desktopLgWidth) {
+      font-size: 74px;
+    }
+    @media screen and (max-width: $smDesktopWidth) {
+      font-size: 76px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+      font-size: 52px;
+    }
+  }
+  p {
+    font-size: 36px;
+    line-height: 100%;
+    @media screen and (max-width: $desktopLgWidth) {
+      font-size: 26px;
+      line-height: 100%;
+    }
+    @media screen and (max-width: $desktopWidth) {
+      font-size: 26px;
+      line-height: 100%;
+    }
+    @media screen and (max-width: $smDesktopWidth) {
+      font-size: 27px;
+      line-height: 100%;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+      font-size: 18px;
+      line-height: 100%;
+    }
+  }
+}
+
+.middle-circle {
+  p {
+    font-size: 36px;
+    line-height: 100%;
+    @media screen and (max-width: $desktopLgWidth) {
+      font-size: 26px;
+    }
+    @media screen and (max-width: $desktopWidth) {
+      font-size: 26px;
+    }
+    @media screen and (max-width: $smDesktopWidth) {
+      font-size: 27px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+      font-size: 20px;
+    }
+  }
+}
+
+.small-circle{
+  h3 {
+    font-size: 50px;
+    line-height: 165.9%;
+    @media screen and (max-width: $desktopLgWidth) {
+      font-size: 38px;
+    }
+    @media screen and (max-width: $smDesktopWidth) {
+      font-size: 37px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+      font-size: 34.3413px;
+    }
+  }
+  p {
+    font-size: 24px;
+    line-height: 100%;
+    @media screen and (max-width: $desktopLgWidth) {
+      font-size: 18px;
+    }
+    @media screen and (max-width: $desktopWidth) {
+      font-size: 18px;
+    }
+    @media screen and (max-width: $smDesktopWidth) {
+      font-size: 18px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+      font-size: 16px;
+    }
+  }
 }
 </style>

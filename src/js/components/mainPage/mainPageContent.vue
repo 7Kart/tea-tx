@@ -1,111 +1,114 @@
 <template>
   <div class="main-page-wrapper">
-    <div id="first-section">
-      <circleBckg />
-      <container>
-        <div class="section-container">
-          <div>
-            <picture>
-              <source
-                srcset="/assets/img/eric-barbeau-horiz.png"
-                media="(max-width: 1280px)"
-              />
-              <source
-                srcset="/assets/img/eric-barbeau-medium.png"
-                media="(max-height: 1080px)"
-              />
-              <img srcset="/assets/img/eric-barbeau.png" />
-            </picture>
+    <body>
+      <div id="first-section">
+        <circleBckg />
+        <container>
+          <div class="section-container">
+            <div>
+              <picture>
+                <source
+                  srcset="/assets/img/eric-barbeau-horiz.png"
+                  media="(max-width: 1280px)"
+                />
+                <source
+                  srcset="/assets/img/eric-barbeau-medium.png"
+                  media="(max-height: 1080px)"
+                />
+                <img srcset="/assets/img/eric-barbeau.png" />
+              </picture>
+            </div>
+            <div>
+              <h2>О нас</h2>
+              <p>
+                Жизнь в чае привела нас к жизни в Китае. Теперь, оглядываясь
+                назад, можно увидеть как путь вел нас в эту точку со всей
+                неизбежностью пути. Осень в Гуанчжоу все еще дышит жарой. Но уже
+                видны первые ласточки осенних изменений — народ вечерами снова
+                стал собираться за чабанью с чаем.
+              </p>
+              <router-link to="/experience">
+                <arrow arrow-text="Наш опыт" />
+              </router-link>
+            </div>
           </div>
-          <div>
-            <h2>О нас</h2>
+        </container>
+      </div>
+      <div id="second-section">
+        <container>
+          <div class="column-text-container">
             <p>
-              Жизнь в чае привела нас к жизни в Китае. Теперь, оглядываясь
-              назад, можно увидеть как путь вел нас в эту точку со всей
-              неизбежностью пути. Осень в Гуанчжоу все еще дышит жарой. Но уже
-              видны первые ласточки осенних изменений — народ вечерами снова
-              стал собираться за чабанью с чаем.
+              Не то, что бы здесь летом чай не пьют, но вот как-то реже
+              встречаются такие компании, рассевшиеся в вокруг маленьких круглых
+              чабаней на улице. Наверное, их предпочитают из-за удобства — легко
+              выносить-заносить и места мало занимают. Таких вот чайных мелочей
+              — здесь множество, и вся наша жизнь выстраивается вокруг чая.
             </p>
-            <router-link to="/experience">
-              <arrow arrow-text="Наш опыт" />
-            </router-link>
+            <p>
+              Этот сайт посвящен нашим открытиям, находкам и работе с чаем.
+              Сейчас уже ясно, что чай — это процесс, который имеет разные
+              стадии и это касается не только и не столько обработки чая,
+              сколько пути.
+            </p>
           </div>
-        </div>
-      </container>
-    </div>
-    <div id="second-section">
-      <container>
-        <div class="column-text-container">
-          <p>
-            Не то, что бы здесь летом чай не пьют, но вот как-то реже
-            встречаются такие компании, рассевшиеся в вокруг маленьких круглых
-            чабаней на улице. Наверное, их предпочитают из-за удобства — легко
-            выносить-заносить и места мало занимают. Таких вот чайных мелочей —
-            здесь множество, и вся наша жизнь выстраивается вокруг чая.
-          </p>
-          <p>
-            Этот сайт посвящен нашим открытиям, находкам и работе с чаем. Сейчас
-            уже ясно, что чай — это процесс, который имеет разные стадии и это
-            касается не только и не столько обработки чая, сколько пути.
-          </p>
-        </div>
-        <imgCircle />
-      </container>
-    </div>
+          <imgCircle />
+        </container>
+      </div>
 
-    <div id="third-section">
-      <container>
-        <div class="projects-sub-section-container">
-          <div class="text-container">
-            <p>
-              Сейчас мы Живем в Гуанчжоу, занимаемся чаем и изучаем его со всех
-              сторон. Мы путешествуем по Китаю, общаемся с людьми, которые
-              делают чай, продают его или обучают чайному мастерству, решаем
-              самые разные задачи, которые поступает нам от проектов самой
-              разной направленности и масштабов — все это складывается в
-              бездонную копилку опыта и это то, чем хочется делиться дальше
-            </p>
-            <router-link to="/experience">
-              <arrow
-                id="project-link"
-                arrow-text="Проекты и партнёры"
-                arr-color="#404040"
-                hoverColor="#47645F"
-              />
-            </router-link>
+      <div id="third-section">
+        <container>
+          <div class="projects-sub-section-container">
+            <div class="text-container">
+              <p>
+                Сейчас мы Живем в Гуанчжоу, занимаемся чаем и изучаем его со
+                всех сторон. Мы путешествуем по Китаю, общаемся с людьми,
+                которые делают чай, продают его или обучают чайному мастерству,
+                решаем самые разные задачи, которые поступает нам от проектов
+                самой разной направленности и масштабов — все это складывается в
+                бездонную копилку опыта и это то, чем хочется делиться дальше
+              </p>
+              <router-link to="/experience">
+                <arrow
+                  id="project-link"
+                  arrow-text="Проекты и партнёры"
+                  arr-color="#404040"
+                  hoverColor="#47645F"
+                />
+              </router-link>
+            </div>
+            <div class="img-container">
+              <picture>
+                <source
+                  srcset="/assets/img/viber_image_hor.png"
+                  media="(max-width: 1280px)"
+                />
+                <img srcset="/assets/img/viber_image.png" />
+              </picture>
+            </div>
           </div>
-          <div class="img-container">
-            <picture>
-              <source
-                srcset="/assets/img/viber_image_hor.png"
-                media="(max-width: 1280px)"
-              />
-              <img srcset="/assets/img/viber_image.png" />
-            </picture>
-          </div>
-        </div>
-      </container>
-    </div>
+        </container>
+      </div>
 
-    <div id="forth-section">
-      <container>
-        <div class="sub-section-blog-container">
-          <div class="img-container">
-            <blog-logo />
+      <div id="forth-section">
+        <container>
+          <div class="sub-section-blog-container">
+            <div class="img-container">
+              <blog-logo />
+            </div>
+            <div class="text-container">
+              <p>
+                Мы следим за всеми новостями, связанными с чаем. Посетите наш
+                блог, что бы узнать акутальные события.
+              </p>
+              <externalLink
+                linkAddress="https://teawall.ru/"
+                linkText="Новостной портал"
+              />
+            </div>
           </div>
-          <div class="text-container">
-            <p>
-              Мы следим за всеми новостями, связанными с чаем. Посетите наш
-              блог, что бы узнать акутальные события.
-            </p>
-            <externalLink
-              linkAddress="https://teawall.ru/"
-              linkText="Новостной портал"
-            />
-          </div>
-        </div>
-      </container>
-    </div>
+        </container>
+      </div>
+    </body>
     <footer-app />
   </div>
 </template>
@@ -144,8 +147,12 @@ export default {
 .main-page-wrapper {
   font-family: 'Spectral';
   background-color: #ced7cc;
-  overflow: hidden;
   position: relative;
+  body {
+    position: relative;
+    z-index: 30;
+    background-color: $background-color;
+  }
   #first-section {
     height: 100vh;
     position: relative;
@@ -243,6 +250,7 @@ export default {
   }
   #second-section {
     margin-top: 25px;
+    background-color: $background-color;
     .column-text-container {
       display: flex;
       flex-direction: row;
@@ -286,6 +294,7 @@ export default {
 
   #third-section {
     margin-bottom: 164px;
+
     @media screen and (max-width: $desktopLgWidth) {
       margin-bottom: 152px;
     }

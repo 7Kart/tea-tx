@@ -1,11 +1,12 @@
 
 <template>
   <!-- Footer component -->
-  <footer
+  <!-- <footer
     id="footer"
     ref="myRef"
     style="transform: translate3d(0px, -50%, 0px)"
-  >
+  > -->
+  <footer id="footer" ref="myRef">
     <container>
       <div class="footer-wrapper">
         <div>
@@ -87,6 +88,11 @@ export default {
 
   mounted() {
     this.elHeight = this.$el.offsetHeight
+
+    window.addEventListener('scroll', () => {
+      console.log('here', window.pageYOffset)
+    })
+
     this.lastScrollPosition = this.$el.offsetHeight
     if (this.animatedScrollObserver != undefined)
       this.animatedScrollObserver.observe(this.$el)
@@ -98,21 +104,15 @@ export default {
 
   methods: {
     scrollHandler(e) {
-      let vector = this.lastScrollPosition < scrollTop ? 1 : -1
-      this.lastScrollPosition = scrollTop
-
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop
+      // console.log('!!!', this.$el.offsetHeight, this.$el.offsetTop, scrollTop)
 
-      let offset =
-        vector > 0
-          ? scrollTop - this.$el.offsetTop
-          : this.elHeight - (scrollTop - this.$el.offsetTop)
+      // let offset = this.$el.offsetHeight - (scrollTop - this.$el.offsetTop)
 
-      if (offset > 0) {
-        this.offsetPerc = Math.floor((100 * offset) / this.elHeight / 2)
-        this.offsetPerc =
-          this.offsetPerc != 0 ? vector * this.offsetPerc : this.offsetPerc
-      }
+      // if (offset > 0) {
+      //   this.offsetPerc =
+      //     -1 * Math.floor((100 * offset) / this.$el.offsetHeight / 2)
+      // }
     }
   }
 }
@@ -122,9 +122,12 @@ export default {
 @import '../../../assets/scss/utils/vars.scss';
 
 footer {
-  position: relative;
+  // position: relative;
   z-index: 10;
   background-color: #d4d7cc;
+  position: sticky;
+  bottom: 0;
+  left: 0;
   // transform: translate3d(0px, -50%, 0px);
   transition: transform 0.2s ease-out;
 
@@ -134,7 +137,7 @@ footer {
     height: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
-    @media screen and (max-width: $phoneWidth) {    
+    @media screen and (max-width: $phoneWidth) {
       flex-direction: column;
       flex-wrap: nowrap;
       margin: 0;

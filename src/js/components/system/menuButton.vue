@@ -1,9 +1,22 @@
 <template>
-  <span @click="onMenuClick">МЕНЮ</span>
+  <span @click="onMenuClick" :style="buttonStyle">МЕНЮ</span>
 </template>
 
 <script>
 export default {
+  props: {
+    btnClr: {
+      type: String,
+      default: '#fff'
+    }
+  },
+  computed: {
+    buttonStyle() {
+      return {
+        color: this.btnClr
+      }
+    }
+  },
   methods: {
     onMenuClick() {
       this.$emit('menuToggle')

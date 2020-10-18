@@ -4,32 +4,37 @@
       <insta-photo
         class="circle-inform-block"
         id="insta-photo-1"
-        :instaSrc="instaImg[0].imgRes[1]"
+        :instaSrc="instaImg[0].imgRes[2]"
       />
       <insta-photo
         class="circle-inform-block"
         id="insta-photo-2"
-        :instaSrc="instaImg[1].imgRes[1]"
+        :instaSrc="instaImg[1].imgRes[2]"
       />
       <infoCicle
         class="circle-inform-block"
         id="text-info-1"
         textContent="работа с крупными брендами"
+        fontClass="middle-circle"
+      
       />
       <infoCicle
         class="circle-inform-block"
         id="text-info-3"
         headerContent="15"
         textContent="лет работаем в китае"
+        fontClass="big-circle"
       />
       <infoCicle
         class="circle-inform-block"
         id="text-info-2"
         headerContent="24/7"
         textContent="на связи с клиентами"
+        fontClass="small-circle"
+
       />
-      <insta-photo id="insta-photo-3" :instaSrc="instaImg[2].imgRes[1]" />
-      <insta-photo id="insta-photo-4" :instaSrc="instaImg[3].imgRes[1]" />
+      <insta-photo id="insta-photo-3" :instaSrc="instaImg[2].imgRes[2]" />
+      <insta-photo id="insta-photo-4" :instaSrc="instaImg[3].imgRes[2]" />
     </div>
   </div>
 </template>
@@ -53,29 +58,6 @@ export default {
     }
   },
 
-  computed:{
-    textStyle(){
-      if(this.windowWidth <= 1440){
- 
-      }else if(this.windowWidth <= 1280){
-
-      }else if(this.windowWidth <= 1024){
-
-      }else if(this.windowWidth <= 480){
-
-      }else{
-
-      }
-    }
-  },
-
-  mounted() {
-    window.addEventListener('resize', () => {
-      this.windowWidth =
-        document.documentElement.clientWidth || document.body.clientWidth;
-    });
-  },
-
   created() {
     axios.get('https://www.instagram.com/tea_tx/?__a=1').then(result => {
       const media = result.data.graphql.user.edge_owner_to_timeline_media.edges
@@ -94,20 +76,20 @@ export default {
 <style lang="scss" scoped>
 @import '../../../assets/scss/utils/vars.scss';
 .insta-image-container {
-  margin-top: 84px;
+  margin-top: 6.8%;
   @media screen and (max-width: $desktopLgWidth) {
-    margin-top: 96px;
+    margin-top: 9.5%;
   }
 
   @media screen and (max-width: $desktopWidth) {
-    margin-top: 73px;
+    margin-top: 8.3%;
   }
 
   @media screen and (max-width: $smDesktopWidth) {
-    margin-top: 14px;
+    margin-top: 4.4%;
   }
   @media screen and (max-width: $phoneWidth) {
-    margin-top: 38px;
+    margin-top: 3.5%;
   }
   .insta-wrapper {
     display: flex;
@@ -296,6 +278,7 @@ export default {
     #text-info-2 {
       background-color: transparent;
       border: 2px solid #fff;
+      color: #fff;
       width: 13%;
       order: 6;
       margin: -60px 7.6% 0 0;

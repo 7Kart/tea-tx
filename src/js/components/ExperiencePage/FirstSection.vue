@@ -55,6 +55,8 @@ section {
   // height: 100vh;
   overflow-x: hidden;
   min-height: 100vh;
+  position: relative;
+  z-index: 30;
   .content-container {
     display: flex;
     align-items: center;

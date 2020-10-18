@@ -12,7 +12,7 @@
         /></svg
       ><span>{{ linkText }}</span></router-link
     >
-    <menuButton @menuToggle="omMenuToggle" />
+    <menuButton btnClr="#404040" @menuToggle="omMenuToggle" />
   </div>
 </template>
 
