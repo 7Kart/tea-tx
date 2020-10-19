@@ -47,10 +47,34 @@ export default {
           linkPath: 'https://xn--80axta9d.com/'
         },
         {
-          imgSrc: '/assets/img/mintcom.png',
-          domainName: 'мята.com',
+          imgSrc: '/assets/img/rutea.png',
+          domainName: 'ru.tea.community',
+          description: 'Чайное комьюнити',
+          linkPath: 'https://ru.tea.community/'
+        },
+        {
+          imgSrc: '/assets/img/teamotea.png',
+          domainName: 'teamotea.shop',
+          description: 'Магазин лучшего чая',
+          linkPath: 'https://ru.tea.community/'
+        },
+        {
+          imgSrc: '/assets/img/teavideo.png',
+          domainName: 'tea.video',
+          description: 'Видеоблог о чае',
+          linkPath: 'https://tea.video/'
+        },
+        {
+          imgSrc: '/assets/img/teaschoole.png',
+          domainName: 'чайнаяшкола.рф',
+          description: 'Чайная школа',
+          linkPath: 'http://xn--80aaa8agglk9eo0f.xn--p1ai/'
+        },
+        {
+          imgSrc: '/assets/img/teamoteablog.png',
+          domainName: 'teamotea.com',
           description: 'Проект о матча чае',
-          linkPath: 'https://xn--80axta9d.com/'
+          linkPath: 'https://teamotea.com/'
         }
       ]
     }
@@ -77,7 +101,7 @@ section {
   .desktop-wrapper {
     display: flex;
     justify-content: space-between;
-
+    padding: 6% 0;
     @media screen and (max-width: $desktopWidth) {
       flex-direction: column;
     }
@@ -96,14 +120,20 @@ section {
       display: flex;
       justify-content: space-between;
       flex-wrap: wrap;
+      perspective: 500px;
+      transform-style: preserve-3d;
       @media screen and (max-width: $desktopLgWidth) {
         width: 59.2%;
       }
       @media screen and (max-width: $desktopWidth) {
         width: 100%;
       }
-      .partner-card{
-          width: 45%;
+      .partner-card {
+        width: 45%;
+        margin-bottom: 2.9%;
+        &:nth-last-child(-n+2){
+          margin-bottom: 0;
+        }
       }
     }
   }

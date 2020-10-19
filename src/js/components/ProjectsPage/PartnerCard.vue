@@ -1,5 +1,5 @@
 <template>
-  <a :href="linkPath" target="_blank">
+  <a class="card" :href="linkPath" target="_blank">
     <div class="partner-card-wrapper">
       <div class="parner-card-container">
         <div class="card-img-container">
@@ -45,8 +45,21 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../../assets/scss/utils/vars.scss';
+.card {
+  transition: transform 0.5s ease;
 
+  &:hover {
+    transition: transform 0.5s ease;
+    // transform-origin: 50% 50%;
+    transform: scale(1.05);
+  }
+}
 .partner-card-wrapper {
+  .card-img-container {
+    img {
+      width: 100%;
+    }
+  }
   .card-info {
     display: flex;
     color: white;
@@ -79,7 +92,6 @@ export default {
             font-size: 18px;
             line-height: 156%;
           }
-    
         }
       }
       &:nth-child(2) {

@@ -41,7 +41,7 @@ section {
   .insta-page-container {
     height: 100%;
     padding: 5% 0 0 0;
-    padding: 15.3% 0 0 0;
+    padding: 6% 0 0 0;
     @media screen and (max-width: $desktopHDWidth ) {
       padding: 10% 0 0 0;
     }

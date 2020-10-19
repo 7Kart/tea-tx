@@ -1,15 +1,15 @@
 <template>
   <div class="projects-container">
-    <projectSection @menuToggle="onMenuToggle" />
+    <partnerSection @menuToggle="onMenuToggle" />
   </div>
 </template>
 
 <script>
-import projectSection from '../components/ProjectsPage/ProjectSection.vue'
+import partnerSection from '../components/ProjectsPage/PartnerSection.vue'
 
 export default {
   components: {
-    projectSection
+    partnerSection
   },
   methods: {
     onMenuToggle() {

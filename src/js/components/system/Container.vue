@@ -6,8 +6,7 @@
 
 <script>
 export default {
-  mounted() {
-  }
+  mounted() {}
 }
 </script>
 
@@ -18,9 +17,11 @@ export default {
   // background-color: red;
   display: flex;
   flex-direction: column;
-  margin: 0 192px 0 192px;
+  margin: 0 386px 0 386px;
   height: 100%;
-  
+  @media screen and (max-width: $desktopFulHdWidth) {
+    margin: 0 192px 0 192px;
+  }
 
   @media screen and (max-width: $desktopLgWidth) {
     margin: 0 151px 0 151px;
