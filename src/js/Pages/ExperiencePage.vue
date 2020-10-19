@@ -21,10 +21,6 @@ export default {
     thirdSection,
     footerApp
   },
-  mounted() {
-
-  },
-
   methods: {
     onMenuToggle() {
       this.$emit('menuToggle')

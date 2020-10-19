@@ -1,6 +1,6 @@
 <template>
   <div class="main-page-wrapper">
-    <body>
+    <div class="content-wrapper">
       <div id="first-section">
         <circleBckg />
         <container>
@@ -67,7 +67,7 @@
                 самой разной направленности и масштабов — все это складывается в
                 бездонную копилку опыта и это то, чем хочется делиться дальше
               </p>
-              <router-link to="/experience">
+              <router-link to="/projects">
                 <arrow
                   id="project-link"
                   arrow-text="Проекты и партнёры"
@@ -108,7 +108,7 @@
           </div>
         </container>
       </div>
-    </body>
+    </div>
     <footer-app />
   </div>
 </template>
@@ -148,7 +148,7 @@ export default {
   font-family: 'Spectral';
   background-color: #ced7cc;
   position: relative;
-  body {
+  .content-wrapper {
     position: relative;
     z-index: 30;
     background-color: $background-color;

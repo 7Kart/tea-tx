@@ -1,8 +1,15 @@
 <template>
-  <a :href="linkAddress" target="_blank" :style="textStyle">
+  <a
+    :href="linkAddress"
+    target="_blank"
+    :style="textStyle"
+    @mouseover="onMouseOver"
+    @mouseout="onMouseOut"
+  >
     {{ linkText }}
 
     <svg
+      ref="svgExtLink"
       width="29"
       height="29"
       viewBox="0 0 29 29"
@@ -36,11 +43,39 @@ export default {
       type: String,
       default: '#EA5949'
     },
+    hoverColor: {
+      type: String,
+      default: '#d85c4e'
+    },
     linkAddress: {
       type: String,
       require: true
     }
   },
+
+  methods: {
+    onMouseOver() {
+      this.$el.style.color = this.hoverColor
+      for (let path of this.$refs.svgExtLink.children) {
+        path.style.fill = this.hoverColor
+      }
+    },
+    onMouseOut() {
+      this.$el.style.color = this.linkColor
+      for (let path of this.$refs.svgExtLink.children) {
+        path.style.fill = this.linkColor
+      }
+    }
+  },
+
+  mounted(){
+    if(this.linkText.length > 0){
+      this.linkText.length > 0
+      this.$refs.svgExtLink.style.marginLeft = "36px";
+
+    }
+  },
+
   computed: {
     textStyle() {
       return {
@@ -66,7 +101,6 @@ a {
   text-decoration: underline;
   transition: color.2s ease;
   &:hover {
-    color: #d85c4e !important;
     transition: color.2s ease;
   }
   @media screen and (max-width: $desktopLgWidth) {
@@ -81,11 +115,9 @@ a {
 
   svg {
     path {
-      &:hover {
-        fill: #d85c4e !important;
-      }
+      transition: color.2s ease;
     }
-    margin-left: 36px;
+    // margin-left: 36px;
   }
 }
 </style>

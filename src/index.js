@@ -10,11 +10,12 @@ import MainPage from './js/Pages/MainPage.vue'
 import ExperiencePage from './js/Pages/ExperiencePage.vue';
 import VueScrollTo from 'vue-scrollto';
 import AnimationScroll from './js/directives/scrollAnimation.js' 
-
+import Projects from './js/Pages/Projects.vue'
 
 const routes = [
   { path: '/', component: MainPage },
-  { path: '/experience', component: ExperiencePage }
+  { path: '/experience', component: ExperiencePage },
+  { path: '/projects', component: Projects }
 ]
 
 const router = new VueRouter({

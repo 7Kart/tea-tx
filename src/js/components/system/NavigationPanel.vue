@@ -1,18 +1,18 @@
 <template>
   <div class="navigation-panel">
-    <router-link class="back-button" :to="linkUrl">
+    <router-link :style="btnStyle" class="back-button" :to="linkUrl">
       <svg viewBox="0 0 18 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M14.9595 1.64154e-06L17.8119 2.84227L5.70485 14.9064L18 27.1578L15.1477 30L-5.8782e-07 14.9064L14.9595 1.64154e-06Z"
-          fill="#404040"
+          :fill="colorButton"
         />
         <path
           d="M14.9595 1.64154e-06L17.8119 2.84227L5.70485 14.9064L18 27.1578L15.1477 30L-5.8782e-07 14.9064L14.9595 1.64154e-06Z"
-          fill="#404040"
+          :fill="colorButton"
         /></svg
       ><span>{{ linkText }}</span></router-link
     >
-    <menuButton btnClr="#404040" @menuToggle="omMenuToggle" />
+    <menuButton :btnClr="colorButton" @menuToggle="omMenuToggle" />
   </div>
 </template>
 
@@ -23,6 +23,14 @@ export default {
     menuButton
   },
 
+  computed:{
+    btnStyle(){
+      return {
+        color:this.colorButton
+      }
+    }
+  },
+
   props: {
     linkText: {
       requried: true,
@@ -31,7 +39,11 @@ export default {
     linkUrl: {
       requried: true,
       type: String
-    }
+    },
+    colorButton:{
+      type: String,
+      default: "#404040"
+    } 
   },
 
   methods: {
@@ -65,7 +77,7 @@ export default {
     font-size: 24px;
     line-height: 37px;
     letter-spacing: 0.03em;
-    color: #404040;
+
     text-transform: uppercase;
     display: flex;
     align-items: center;

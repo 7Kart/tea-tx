@@ -34,7 +34,7 @@
                   <router-link to="/experience">Опыт </router-link>
                 </li>
                 <li>
-                  <a>Партнёры</a>
+                  <router-link to="/projects">Партнёры </router-link>
                 </li>
                 <li>
                   <a>Контакты</a>
@@ -173,7 +173,7 @@ export default {
             cursor: pointer;
             transition: color 0.3s ease;
             a {
-              &.router-link-active {
+              &.router-link-exact-active {
                 color: #ee5b5b;
               }
               color: white;

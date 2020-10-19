@@ -1,11 +1,5 @@
 
 <template>
-  <!-- Footer component -->
-  <!-- <footer
-    id="footer"
-    ref="myRef"
-    style="transform: translate3d(0px, -50%, 0px)"
-  > -->
   <footer id="footer" ref="myRef">
     <container>
       <div class="footer-wrapper">
@@ -20,7 +14,7 @@
           <ul class="menu-list">
             <li><router-link to="/">О нас</router-link></li>
             <li><router-link to="/experience">Опыт</router-link></li>
-            <li><router-link to="/experience">Партнеры</router-link></li>
+            <li><router-link to="/projects">Партнеры</router-link></li>
             <li><router-link to="/experience">Контакты</router-link></li>
             <li><router-link to="/experience">Блог</router-link></li>
           </ul>
@@ -72,34 +66,6 @@ export default {
     return {
       offsetPerc: 0
     }
-  },
-
-  watch: {
-    offsetPerc() {
-      this.$el.style.transform = `translate3d(0px, ${this.offsetPerc}%, 0px)`
-    }
-  },
-
-  created() {
-    if ('IntersectionObserver' in window) {
-      this.animatedScrollObserver = scrollObserver(this.scrollHandler)
-    }
-  },
-
-  mounted() {
-    this.elHeight = this.$el.offsetHeight
-
-    window.addEventListener('scroll', () => {
-      console.log('here', window.pageYOffset)
-    })
-
-    this.lastScrollPosition = this.$el.offsetHeight
-    if (this.animatedScrollObserver != undefined)
-      this.animatedScrollObserver.observe(this.$el)
-  },
-
-  destroyed() {
-    this.animatedScrollObserver.observe(this.$el)
   },
 
   methods: {

@@ -41,7 +41,7 @@ export default {
 
 <style lang="scss" scoped>
 .page-anim-enter-active {
-  animation: coming 0.4s;
+  animation: coming 1.2s;
   animation-delay: 0.3s;
   opacity: 0;
 }
@@ -52,21 +52,21 @@ export default {
 
 @keyframes going {
   from {
-    transform: translateX(0);
+    // transform: translateX(0);
   }
   to {
-    transform: translateX(100vw);
+    // transform: translateX(100vw);
     opacity: 0;
   }
 }
 
 @keyframes coming {
   from {
-    transform: translateX(-100vw);
+    // transform: translateX(-100vw);
     opacity: 0;
   }
   to {
-    transform: translateX(0);
+    // transform: translateX(0);
     opacity: 1;
   }
 }
