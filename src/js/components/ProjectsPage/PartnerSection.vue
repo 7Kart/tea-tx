@@ -136,17 +136,30 @@ section {
     #1a5a38;
   .project-list-container-mobile {
     @media screen and (max-width: $phoneWidth) {
-      margin: 0 0 0 42px;
+      margin: 9px 0 0 0 42px;
       padding: 0 0 9.9% 0;
     }
   }
   .desktop-wrapper {
     display: flex;
     justify-content: space-between;
+    margin-top: 164px;
+    @media screen and (max-width: $desktopLgWidth) {
+      margin-top: 149px;
+    }
+
     @media screen and (max-width: $desktopWidth) {
+      margin-top: 92px;
       flex-direction: column;
     }
 
+    @media screen and (max-width: $smDesktopWidth) {
+      margin-top: 128px;
+    }
+
+    @media screen and (max-width: $phoneWidth ) {
+      margin-top: 90px;
+    }
     .project-list-header {
       width: 32.2%;
       @media screen and (max-width: $desktopLgWidth) {
