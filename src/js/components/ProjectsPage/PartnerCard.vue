@@ -26,6 +26,19 @@ export default {
   components: {
     externalLink
   },
+  mounted() {
+    this.onResize();
+    window.addEventListener('resize', () => {
+      this.onResize();
+    })
+  },
+  methods: {
+    onResize() {    
+      if (document.body.offsetWidth <= 480)
+        this.$el.classList.remove('card-hover')
+      else this.$el.classList.add('card-hover')
+    }
+  },
   props: {
     imgSrc: {
       type: String
@@ -45,15 +58,18 @@ export default {
 
 <style lang="scss" scoped>
 @import '../../../assets/scss/utils/vars.scss';
-.card {
-  transition: transform 0.5s ease;
 
-  &:hover {
+.card {
+  &.card-hover {
     transition: transform 0.5s ease;
-    // transform-origin: 50% 50%;
-    transform: scale(1.05);
+    &:hover {
+      transition: transform 0.5s ease;
+      // transform-origin: 50% 50%;
+      transform: scale(1.05);
+    }
   }
 }
+
 .partner-card-wrapper {
   .card-img-container {
     img {

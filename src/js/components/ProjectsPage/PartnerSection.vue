@@ -11,7 +11,7 @@
         <div class="project-list-header">
           <h2>Наши проекты</h2>
         </div>
-        <div class="project-list-container">
+        <div v-if="!isMobile" class="project-list-container">
           <projectCard
             class="partner-card"
             v-for="(partner, index) in partners"
@@ -24,6 +24,22 @@
         </div>
       </div>
     </container>
+    <div
+      v-if="isMobile"
+      class="project-list-container project-list-container-mobile"
+    >
+      <swiper :options="swiperOption" ref="mySwiper">
+        <!-- slides -->
+        <swiper-slide v-for="(partner, index) in partners" :key="index">
+          <projectCard
+            class="partner-card"
+            :domainName="partner.domainName"
+            :description="partner.description"
+            :linkPath="partner.linkPath"
+            :imgSrc="partner.imgSrc"
+        /></swiper-slide>
+      </swiper>
+    </div>
   </section>
 </template>
 
@@ -31,14 +47,26 @@
 import navPanel from '../system/NavigationPanel.vue'
 import container from '../system/Container.vue'
 import projectCard from './PartnerCard.vue'
+
+import 'swiper/dist/css/swiper.css'
+
+import { swiper, swiperSlide } from 'vue-awesome-swiper'
+
 export default {
   components: {
     navPanel,
     container,
-    projectCard
+    projectCard,
+    swiper,
+    swiperSlide
   },
   data() {
     return {
+      isMobile: false,
+      swiperOption: {
+        slidesPerView: 1.4,
+        spaceBetween: 42
+      },
       partners: [
         {
           imgSrc: '/assets/img/mintcom.png',
@@ -79,7 +107,16 @@ export default {
       ]
     }
   },
+  mounted() {
+    this.isMobile = this.detectMobileWidth()
+    window.addEventListener('resize', () => {
+      this.isMobile = this.detectMobileWidth()
+    })
+  },
   methods: {
+    detectMobileWidth() {
+      return document.body.offsetWidth <= 480
+    },
     omMenuToggle() {
       this.$emit('menuToggle')
     }
@@ -97,11 +134,15 @@ section {
       rgba(30, 114, 69, 0.87) 100%
     ),
     #1a5a38;
-
+  .project-list-container-mobile {
+    @media screen and (max-width: $phoneWidth) {
+      margin: 0 0 0 42px;
+      padding: 0 0 9.9% 0;
+    }
+  }
   .desktop-wrapper {
     display: flex;
     justify-content: space-between;
-    padding: 6% 0;
     @media screen and (max-width: $desktopWidth) {
       flex-direction: column;
     }
@@ -113,6 +154,28 @@ section {
       }
       @media screen and (max-width: $desktopWidth) {
         width: 100%;
+      }
+      h2 {
+        color: white;
+        font-family: 'Spectral';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 82px;
+        line-height: 100%;
+        @media screen and (max-width: $desktopLgWidth) {
+          font-size: 56px;
+        }
+        @media screen and (max-width: $desktopWidth) {
+          margin-bottom: 80px;
+        }
+        @media screen and (max-width: $smDesktopWidth) {
+          font-size: 48px;
+        }
+
+        @media screen and (max-width: $phoneWidth) {
+          font-size: 42px;
+          margin-bottom: 52px;
+        }
       }
     }
     .project-list-container {
@@ -131,8 +194,11 @@ section {
       .partner-card {
         width: 45%;
         margin-bottom: 2.9%;
-        &:nth-last-child(-n+2){
+        &:nth-last-child(-n + 2) {
           margin-bottom: 0;
+        }
+        @media screen and (max-width: $phoneWidth) {
+          width: 100%;
         }
       }
     }

@@ -9,8 +9,9 @@ import VueRouter from 'vue-router'
 import MainPage from './js/Pages/MainPage.vue'
 import ExperiencePage from './js/Pages/ExperiencePage.vue';
 import VueScrollTo from 'vue-scrollto';
-import AnimationScroll from './js/directives/scrollAnimation.js' 
+import AnimationScroll from './js/directives/scrollAnimation.js'
 import Projects from './js/Pages/Projects.vue'
+
 
 const routes = [
   { path: '/', component: MainPage },
@@ -31,9 +32,9 @@ Vue.use(VueScrollTo);
 const app = new Vue({
   el: '#app',
   router,
-  render: h => h(App),  
-  data(){
-    return{
+  render: h => h(App),
+  data() {
+    return {
       closeMenu: false
     }
   },
