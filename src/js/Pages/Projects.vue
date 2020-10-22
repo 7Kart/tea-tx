@@ -1,15 +1,23 @@
 <template>
   <div class="projects-container">
-    <partnerSection @menuToggle="onMenuToggle" />
+    <div class="section-contaienr">
+      <partnerSection @menuToggle="onMenuToggle" />
+      <projectSection />
+    </div>
+    <footer-app />
   </div>
 </template>
 
 <script>
 import partnerSection from '../components/ProjectsPage/PartnerSection.vue'
+import projectSection from '../components/ProjectsPage/ProjectSection.vue'
+import footerApp from '../components/system/Footer.vue'
 
 export default {
   components: {
-    partnerSection
+    partnerSection,
+    projectSection,
+    footerApp
   },
   methods: {
     onMenuToggle() {
@@ -18,3 +26,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+.section-contaienr {
+  background-color: #ced7cc;
+  z-index: 30;
+  position:relative;   
+}
+</style>

@@ -15,7 +15,9 @@
             <li><router-link to="/">О нас</router-link></li>
             <li><router-link to="/experience">Опыт</router-link></li>
             <li><router-link to="/projects">Партнеры</router-link></li>
-            <li><router-link to="/experience">Контакты</router-link></li>
+            <li>
+              <router-link to="/contacts">Контакты </router-link>
+            </li>
             <li><router-link to="/experience">Блог</router-link></li>
           </ul>
           <ul class="social-link-list">

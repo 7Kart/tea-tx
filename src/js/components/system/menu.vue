@@ -37,7 +37,7 @@
                   <router-link to="/projects">Партнёры </router-link>
                 </li>
                 <li>
-                  <a>Контакты</a>
+                  <router-link to="/contacts">Контакты </router-link>
                 </li>
               </ul>
             </nav>

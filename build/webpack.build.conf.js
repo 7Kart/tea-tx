@@ -28,7 +28,7 @@ const buildWebpackConfig = merge(baseWebpackConfig, {
       indexPath: path.join(__dirname, '../',  'dist', 'index.html'),
 
       // Required - Routes to render.
-      routes: ['/', '/experience', '/projects'],
+      routes: ['/', '/experience', '/projects', '/contacts'],
 
 
       postProcess(renderedRoute) {

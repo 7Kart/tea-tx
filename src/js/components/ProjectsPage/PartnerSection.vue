@@ -128,6 +128,8 @@ export default {
 @import '../../../assets/scss/utils/vars.scss';
 
 section {
+  z-index: 30;
+  position: relative;
   background: linear-gradient(
       70.77deg,
       #1a5a38 1.04%,
@@ -136,29 +138,30 @@ section {
     #1a5a38;
   .project-list-container-mobile {
     @media screen and (max-width: $phoneWidth) {
-      margin: 9px 0 0 0 42px;
+      margin: 9px 0 0 42px;
       padding: 0 0 9.9% 0;
     }
   }
   .desktop-wrapper {
     display: flex;
     justify-content: space-between;
-    margin-top: 164px;
+    margin: 164px 0 164px 0;
     @media screen and (max-width: $desktopLgWidth) {
-      margin-top: 149px;
+      margin: 149px 0 152px 0;
     }
 
     @media screen and (max-width: $desktopWidth) {
-      margin-top: 92px;
+      margin: 92px 0 142px 0;
       flex-direction: column;
     }
 
     @media screen and (max-width: $smDesktopWidth) {
-      margin-top: 128px;
+      margin: 128px 0 80px 0;
     }
 
-    @media screen and (max-width: $phoneWidth ) {
-      margin-top: 90px;
+    @media screen and (max-width: $phoneWidth) {
+      // margin-top: 90px;
+      margin: 90px 0 0 0;
     }
     .project-list-header {
       width: 32.2%;
@@ -175,11 +178,14 @@ section {
         font-weight: 500;
         font-size: 82px;
         line-height: 100%;
+        margin-top: 61px;
         @media screen and (max-width: $desktopLgWidth) {
           font-size: 56px;
+          margin-top: 25px;
         }
         @media screen and (max-width: $desktopWidth) {
           margin-bottom: 80px;
+          margin-top: 0;
         }
         @media screen and (max-width: $smDesktopWidth) {
           font-size: 48px;

@@ -11,12 +11,14 @@ import ExperiencePage from './js/Pages/ExperiencePage.vue';
 import VueScrollTo from 'vue-scrollto';
 import AnimationScroll from './js/directives/scrollAnimation.js'
 import Projects from './js/Pages/Projects.vue'
-
+import Contacts from './js/Pages/Contacts.vue'
 
 const routes = [
   { path: '/', component: MainPage },
   { path: '/experience', component: ExperiencePage },
-  { path: '/projects', component: Projects }
+  { path: '/projects', component: Projects },
+  { path: '/contacts', component: Contacts }
+
 ]
 
 const router = new VueRouter({

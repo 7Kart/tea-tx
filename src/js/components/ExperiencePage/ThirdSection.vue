@@ -21,7 +21,7 @@
             По сотрудничеству с нами вы можете связаться на нашей странице
             контактов
           </p>
-          <router-link to="/experience">
+          <router-link to="/contacts">
             <arrow
               arrow-text="Контакты"
               arrColor="#404040"
