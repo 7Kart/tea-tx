@@ -22,7 +22,6 @@
 <script>
 export default {
   mounted() {
-    console.log(`logo init`)
     this.$nextTick(() => {
       this.$refs.svgLogo.classList.add('appearance-logo')
     })

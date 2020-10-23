@@ -2,7 +2,7 @@
   <div class="experince-container">
     <firstSection @menuToggle="onMenuToggle" />
     <secondSection />
-    <thirdSection/>
+    <thirdSection />
 
     <footer-app />
   </div>
@@ -25,6 +25,21 @@ export default {
     onMenuToggle() {
       this.$emit('menuToggle')
     }
+  },
+  beforeRouteLeave(to, from, next) {
+    this.$scrollTo('.experince-container', 300, {
+      container: 'body',
+      easing: 'ease',
+      offset: 0,
+      force: true,
+      cancelable: false,
+      onStart: () => {
+        next()
+      }
+      // onDone: () => {
+      //   next()
+      // }
+    })
   }
 }
 </script>

@@ -68,6 +68,21 @@ export default {
       ]
     }
   },
+  beforeRouteLeave(to, from, next) {
+    this.$scrollTo('.contacts-container', 300, {
+      container: 'body',
+      easing: 'ease',
+      offset: 0,
+      force: true,
+      cancelable: false,
+      onStart: () => {
+        next()
+      }
+      // onDone: () => {
+      //   next()
+      // }
+    })
+  },
   methods: {
     omMenuToggle() {
       this.$emit('menuToggle')

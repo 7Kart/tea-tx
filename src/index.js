@@ -26,6 +26,7 @@ const router = new VueRouter({
   mode: 'history'
 })
 
+
 Vue.directive("scrollanimation", AnimationScroll);
 
 Vue.use(VueRouter);

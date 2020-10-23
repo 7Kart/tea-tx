@@ -34,7 +34,7 @@ export default {
   methods: {
     onMouseOver() {
       this.$el.style.color = this.hoverColor
-      this.$refs.svgAr.style.fill = this.hoverColor
+      if (this.$refs.svgAr) this.$refs.svgAr.style.fill = this.hoverColor
     },
     onMouseout() {
       if (this.$refs.svgAr) this.$refs.svgAr.style.fill = this.arrColor

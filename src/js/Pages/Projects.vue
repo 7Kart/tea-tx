@@ -23,6 +23,19 @@ export default {
     onMenuToggle() {
       this.$emit('menuToggle')
     }
+  },
+  beforeRouteLeave(to, from, next) {
+    next()
+    this.$scrollTo('.projects-container', 300, {
+      container: 'body',
+      easing: 'ease',
+      offset: 0,
+      force: true,
+      cancelable: false,
+      onStart: () => {
+        next()
+      }
+    })
   }
 }
 </script>
@@ -31,6 +44,6 @@ export default {
 .section-contaienr {
   background-color: #ced7cc;
   z-index: 30;
-  position:relative;   
+  position: relative;
 }
 </style>

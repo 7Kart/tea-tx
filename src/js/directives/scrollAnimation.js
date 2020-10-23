@@ -1,7 +1,5 @@
 
 const animatedScrollObserver = new IntersectionObserver((enties, observer) => {
-    console.log(`enties`, enties);
-
     enties.forEach((entry) => {
         if (entry.isIntersecting) {
             entry.target.classList.add("scroll-enter")

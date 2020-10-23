@@ -6,7 +6,7 @@
         <container>
           <div class="section-container">
             <div>
-              <picture>
+              <picture v-scrollanimation>
                 <source
                   srcset="/assets/img/eric-barbeau-horiz.png"
                   media="(max-width: 1280px)"
@@ -51,8 +51,9 @@
               сколько пути.
             </p>
           </div>
-          <imgCircle />
+          <imgCircle v-if="windowWidth >= 480" />
         </container>
+        <imgCircle v-if="windowWidth < 480" />
       </div>
 
       <div id="third-section">
@@ -77,7 +78,7 @@
               </router-link>
             </div>
             <div class="img-container">
-              <picture>
+              <picture v-scrollanimation>
                 <source
                   srcset="/assets/img/viber_image_hor.png"
                   media="(max-width: 1280px)"
@@ -135,8 +136,27 @@ export default {
     footerApp,
     imgCircle
   },
+  data() {
+    return {
+      windowWidth: null
+    }
+  },
   mounted() {
-    console.log('body init')
+    this.onResize()
+  },
+
+  created() {
+    window.addEventListener('resize', this.onResize)
+  },
+
+  destroyed() {
+    window.addEventListener('resize', this.onResize)
+  },
+
+  methods: {
+    onResize() {
+      this.windowWidth = this.$el.offsetWidth
+    }
   }
 }
 </script>
@@ -174,6 +194,15 @@ export default {
         }
         @media screen and (max-width: $desktopWidth) {
           width: 100%;
+        }
+        picture {
+          &.before-scroll-enter {
+            filter: blur(5px);
+          }
+          &.scroll-enter {
+            filter: blur(0);
+            transition: filter 0.6s ease-in;
+          }
         }
         img {
           @media screen and (max-width: $desktopWidth) {
@@ -351,6 +380,16 @@ export default {
       }
 
       .img-container {
+        picture {
+          &.before-scroll-enter {
+            filter: blur(5px);
+          }
+          &.scroll-enter {
+            filter: blur(0);
+            transition: filter 0.6s ease-in;
+          }
+        }
+
         text-align: end;
         width: calc((50% - 65px) * 3 / 4);
         @media screen and (max-width: $desktopLgWidth) {

@@ -22,7 +22,7 @@ import scrollObserver from '../../scripts/sectionIntersectionObserver.js'
 export default {
   data() {
     return {
-      bottom: -120,
+      bottom: -95,
       top: -80
     }
   },
@@ -33,7 +33,9 @@ export default {
     this.windowHeight = window.innerHeight / 2
     this.interval = null
   },
-
+  destroyed() {
+    this.animatedScrollObserver.disconnect();
+  },
   mounted() {
     this.animatedScrollObserver.observe(this.$el)
     //get image background's height
@@ -60,18 +62,26 @@ export default {
   methods: {
     scrollImgHandler(e) {
       let scrollTop = window.pageYOffset || document.documentElement.scrollTop
- 
-      let vector = this.lastScrollPosition < scrollTop ? -1 : 1
-      this.lastScrollPosition = scrollTop
+      let difference = Math.abs(scrollTop - this.lastScrollPosition)
+      let isMove = false
+
+      if (difference > 100) {
+        this.lastScrollPosition = scrollTop
+        isMove = true
+      } else {
+        isMove = false
+      }
 
       if (
         this.bottomAnimationPoint <= scrollTop &&
-        scrollTop < this.topAnimationPoint
+        scrollTop < this.topAnimationPoint &&
+        isMove &&
+        this.$refs.imgbckg
       ) {
         this.$refs.imgbckg.style.bottom = `${this.setIntervalValue(scrollTop)}%`
       }
     },
-    
+
     setIntervalValue(curValue) {
       return (
         ((curValue - this.bottomAnimationPoint) * (this.top - this.bottom)) /
@@ -104,7 +114,7 @@ export default {
   img {
     position: absolute;
     width: 100%;
-    transition: bottom 1.5s ease;
+    transition: bottom 0.5s ease;
     // bottom: 0;
   }
   svg {
