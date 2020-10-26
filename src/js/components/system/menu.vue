@@ -222,7 +222,7 @@ export default {
             height: 277px;
             width: 277px;
           }
-          @media screen and (max-width: $phoneWidth) {
+          @media screen and (max-width: $tableWidth) {
             display: none;
           }
         }
@@ -232,7 +232,7 @@ export default {
     .footer-line {
       display: none;
       width: 100%;
-      @media screen and (max-width: $phoneWidth) {
+      @media screen and (max-width: $tableWidth) {
         display: block;
       }
     }
@@ -245,12 +245,12 @@ export default {
       justify-content: space-between;
       border-top: 2px solid white;
       padding-top: 22px;
-      @media screen and (max-width: $phoneWidth) {
+      @media screen and (max-width: $tableWidth) {
         border-top: none;
         padding-top: 0;
       }
       .address-wrapper {
-        @media screen and (max-width: $phoneWidth) {
+        @media screen and (max-width: $tableWidth) {
           display: none;
         }
       }
@@ -284,7 +284,7 @@ export default {
           display: flex;
           height: 100%;
           justify-content: space-between;
-          @media screen and (max-width: $phoneWidth) {
+          @media screen and (max-width: $tableWidth) {
             flex-direction: column;
           }
           li {
@@ -294,7 +294,7 @@ export default {
       }
       #menu-mobile-logo {
         display: none;
-        @media screen and (max-width: $phoneWidth) {
+        @media screen and (max-width: $tableWidth) {
           display: block;
           height: 106px;
           width: 106px;

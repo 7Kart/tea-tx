@@ -49,7 +49,7 @@ export default {
 .big-circle {
   h3 {
     font-size: 102px;
-    line-height: 165.9%;
+    line-height: 95%;
     @media screen and (max-width: $desktopLgWidth) {
       font-size: 74px;
     }
@@ -63,7 +63,7 @@ export default {
   }
   p {
     font-size: 36px;
-    line-height: 100%;
+    line-height: 90%;
     @media screen and (max-width: $desktopLgWidth) {
       font-size: 26px;
       line-height: 100%;
@@ -104,19 +104,24 @@ export default {
   }
 }
 
-.small-circle{
+.small-circle {
   h3 {
     font-size: 50px;
     line-height: 165.9%;
     @media screen and (max-width: $desktopLgWidth) {
       font-size: 38px;
     }
+
     @media screen and (max-width: $smDesktopWidth) {
       font-size: 37px;
     }
+    @media screen and (max-width: $tableWidth) {
+      line-height: 100%;
+      font-size: 34px;
+    }
 
     @media screen and (max-width: $phoneWidth) {
-      font-size: 34.3413px;
+      font-size: 32px;
     }
   }
   p {

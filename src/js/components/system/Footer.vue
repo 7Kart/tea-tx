@@ -105,7 +105,7 @@ footer {
     height: 100%;
     justify-content: space-between;
     flex-wrap: wrap;
-    @media screen and (max-width: $phoneWidth) {
+    @media screen and (max-width: $smTableWidth) {
       flex-direction: column;
       flex-wrap: nowrap;
       margin: 0;
@@ -121,7 +121,7 @@ footer {
         @media screen and (max-width: $desktopWidth) {
           width: calc((50%-38px) * 2 / 3);
         }
-        @media screen and (max-width: $phoneWidth) {
+        @media screen and (max-width: $smTableWidth) {
           width: 50%;
           margin-bottom: 42px;
         }
@@ -136,7 +136,7 @@ footer {
         @media screen and (max-width: $desktopWidth) {
           width: calc(50%-38px);
         }
-        @media screen and (max-width: $phoneWidth) {
+        @media screen and (max-width: $smTableWidth) {
           width: 65%;
         }
         ul {
@@ -233,7 +233,7 @@ footer {
       justify-content: space-between;
       align-items: center;
       margin-top: 100px;
-      @media screen and(max-width:$phoneWidth) {
+      @media screen and(max-width:$smTableWidth) {
         flex-direction: column-reverse;
         align-items: flex-start;
         margin-top: 50px;
@@ -244,7 +244,7 @@ footer {
         font-weight: normal;
         font-size: 20px;
         line-height: 23px;
-        @media screen and(max-width:$phoneWidth) {
+        @media screen and(max-width:$smTableWidth) {
           width: 100%;
         }
         @media screen and(max-width: $desktopWidth) {
@@ -257,7 +257,7 @@ footer {
         }
 
         &.address-block {
-          @media screen and(max-width: $phoneWidth) {
+          @media screen and(max-width: $smTableWidth) {
             margin: 0 0 17px 0;
           }
         }
@@ -277,7 +277,7 @@ footer {
               @media screen and(max-width: $smDesktopWidth) {
                 width: 100%;
               }
-              @media screen and(max-width: $phoneWidth) {
+              @media screen and(max-width: $smTableWidth) {
                 width: auto;
               }
             }
@@ -290,7 +290,7 @@ footer {
             @media screen and(max-width: $smDesktopWidth) {
               margin: 0 11px 0 0;
             }
-            @media screen and(max-width: $phoneWidth) {
+            @media screen and(max-width: $smTableWidth) {
               margin: 0 12px 0 12px;
             }
           }
