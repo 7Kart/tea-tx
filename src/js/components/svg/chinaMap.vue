@@ -23,6 +23,9 @@
 </template>
 
 <style scoped>
+svg{
+  margin-bottom: 5%;
+}
 .city-name {
   font-family: 'Raleway';
   font-weight: bold;

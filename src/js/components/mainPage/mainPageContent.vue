@@ -197,7 +197,7 @@ export default {
         }
         picture {
           &.before-scroll-enter {
-            filter: blur(5px);
+            filter: blur(2px);
           }
           &.scroll-enter {
             filter: blur(0);
@@ -382,7 +382,7 @@ export default {
       .img-container {
         picture {
           &.before-scroll-enter {
-            filter: blur(5px);
+            filter: blur(2px);
           }
           &.scroll-enter {
             filter: blur(0);

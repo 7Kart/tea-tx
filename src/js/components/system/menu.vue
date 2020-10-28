@@ -53,7 +53,7 @@
                   <a>VK</a>
                 </li>
                 <li>
-                  <a>FACEBOOKE</a>
+                  <a>FACEBOOK</a>
                 </li>
                 <li>
                   <a>INSTAGRAM</a>
@@ -121,6 +121,7 @@ export default {
     display: flex;
     flex-direction: column;
     color: white;
+
     height: 100%;
     justify-content: space-between;
     .close-bar {
@@ -128,16 +129,30 @@ export default {
         display: flex;
         font-weight: bold;
         align-items: center;
+        &:hover path,
+        &:hover .close-text {
+          fill: #e7e7e7;
+          color: #e7e7e7;
+
+          transition: fill, color, .3s ease;
+        }
+        path{
+          transition: fill .3s ease;
+        }
         span {
           cursor: pointer;
           display: flex;
           justify-content: center;
+
           &:first-child {
             margin-right: 36px;
             font-size: 30px;
           }
+          
           &.close-text {
             font-size: 24px;
+            transition: color .3s ease;
+
             @media screen and (max-width: $smDesktopWidth) {
               font-size: 20px;
             }
@@ -305,13 +320,17 @@ export default {
 }
 
 .menu-fade-enter-active {
-  transition: all 0.3s ease;
+  // transition: all 0.3s ease;
+  transition: all 0.7s ease;
+
 }
 .menu-fade-leave-active {
-  transition: all 0.3s ease;
+  transition: all 0.7s ease;
 }
 .menu-fade-enter,
 .menu-fade-leave-to {
-  transform: translateY(-100vh);
+  // transform: translateY(-100vh);
+  opacity: 0;
+  z-index: 1;
 }
 </style>

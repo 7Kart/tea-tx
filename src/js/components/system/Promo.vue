@@ -56,7 +56,6 @@ export default {
 <style lang="scss" scoped>
 @import '../../../assets/scss/utils/vars.scss';
 @import '../../../assets/scss/utils/mixins.scss';
-
 @import '../../../assets/scss/utils/grid.scss';
 
 .promo-container {
@@ -117,7 +116,6 @@ export default {
       &.appearance-promo-text {
         transition: all 1.5s ease;
         transition-delay: .1s;
-
         transform: rotateX(0) translate(0px, 0px);
         opacity: 1;
       }

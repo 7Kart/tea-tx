@@ -32,7 +32,7 @@ section {
     ),
     #1a5a38;
   // padding: 164px 0 0 0;
-  height: 100vh;
+  min-height: 100vh;
   position: relative;
   z-index: 30;
   @media screen and (max-width: $phoneWidth) {
@@ -40,22 +40,21 @@ section {
   }
   .insta-page-container {
     height: 100%;
-    padding: 5% 0 0 0;
-    padding: 6% 0 0 0;
+    padding: 6% 0 2% 0;
     @media screen and (max-width: $desktopHDWidth ) {
-      padding: 10% 0 0 0;
+      padding: 10% 0 5% 0;
     }
 
     @media screen and (max-width: $desktopLgWidth) {
-      padding: 15.3% 0 0 0;
+      padding: 15.3% 0 6% 0;
     }
 
     @media screen and (max-width: $desktopWidth) {
-      padding: 15.1% 0 0 0;
+      padding: 15.1% 0 6% 0;
     }
 
     @media screen and (max-width: $smDesktopWidth) {
-      padding: 11.8% 0 0 0;
+      padding: 11.8% 0 6% 0;
     }
 
     @media screen and (max-width: $phoneWidth) {

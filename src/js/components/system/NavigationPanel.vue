@@ -1,6 +1,11 @@
 <template>
   <div class="navigation-panel">
-    <router-link :style="btnStyle" class="back-button" :to="linkUrl">
+    <router-link
+      :style="btnStyle"
+      :class="hoverClass"
+      class="back-button"
+      :to="linkUrl"
+    >
       <svg viewBox="0 0 18 30" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M14.9595 1.64154e-06L17.8119 2.84227L5.70485 14.9064L18 27.1578L15.1477 30L-5.8782e-07 14.9064L14.9595 1.64154e-06Z"
@@ -23,11 +28,14 @@ export default {
     menuButton
   },
 
-  computed:{
-    btnStyle(){
+  computed: {
+    btnStyle() {
       return {
-        color:this.colorButton
+        color: this.colorButton
       }
+    },
+    hoverClass() {
+      return this.colorButton == '#404040' ? 'dark-hover' : 'light-hover'
     }
   },
 
@@ -40,10 +48,10 @@ export default {
       requried: true,
       type: String
     },
-    colorButton:{
+    colorButton: {
       type: String,
-      default: "#404040"
-    } 
+      default: '#404040'
+    }
   },
 
   methods: {
@@ -89,20 +97,42 @@ export default {
       font-size: 18px;
       line-height: 27px;
     }
-  }
-  svg {
-    width: 18px;
-    height: 30px;
-    margin-right: 36px;
+    transition: color, 0.3s ease !important;
 
-    @media screen and (max-width: $smDesktopWidth) {
-      width: 14px;
-      height: 24px;
-      margin-right: 32px;
+    &.light-hover {
+      &:hover path,
+      &:hover span {
+        fill: #e7e7e7;
+        color: #e7e7e7;
+        transition: fill, color, 0.3s ease;
+      }
     }
 
-    @media screen and (max-width: $phoneWidth) {
-      margin-right: 20px;
+    &.dark-hover {
+      &:hover path,
+      &:hover span {
+        fill: #47645f;
+        color: #47645f;
+        transition: fill, color, 0.3s ease;
+      }
+    }
+
+    svg {
+      width: 18px;
+      height: 30px;
+      margin-right: 36px;
+      path {
+        transition: fill, 0.3s ease !important;
+      }
+      @media screen and (max-width: $smDesktopWidth) {
+        width: 14px;
+        height: 24px;
+        margin-right: 32px;
+      }
+
+      @media screen and (max-width: $phoneWidth) {
+        margin-right: 20px;
+      }
     }
   }
 }

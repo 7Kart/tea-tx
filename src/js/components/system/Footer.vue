@@ -25,7 +25,7 @@
               <a>VK</a>
             </li>
             <li>
-              <a>FACEBOOKE</a>
+              <a>FACEBOOK</a>
             </li>
             <li>
               <a>INSTAGRAM</a>

@@ -22,7 +22,7 @@ import scrollObserver from '../../scripts/sectionIntersectionObserver.js'
 export default {
   data() {
     return {
-      bottom: -95,
+      bottom: -85,
       top: -80
     }
   },
@@ -65,7 +65,7 @@ export default {
       let difference = Math.abs(scrollTop - this.lastScrollPosition)
       let isMove = false
 
-      if (difference > 100) {
+      if (difference > 135) {
         this.lastScrollPosition = scrollTop
         isMove = true
       } else {
@@ -114,7 +114,7 @@ export default {
   img {
     position: absolute;
     width: 100%;
-    transition: bottom 0.5s ease;
+    transition: bottom .8s ease;
     // bottom: 0;
   }
   svg {
@@ -122,3 +122,4 @@ export default {
   }
 }
 </style>
+

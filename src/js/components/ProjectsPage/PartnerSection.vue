@@ -107,11 +107,22 @@ export default {
       ]
     }
   },
+    // computed: {
+    //   swiper() {
+    //     return this.$refs.mySwiper.$swiper
+    //   }
+    // },
   mounted() {
     this.isMobile = this.detectMobileWidth()
     window.addEventListener('resize', () => {
       this.isMobile = this.detectMobileWidth()
     })
+
+    // console.log('this.$refs.mySwiper', this.swiper);
+
+    // swiper.slideNext(1000, ()=>{
+    //   console.log('stoped');
+    // });
   },
   methods: {
     detectMobileWidth() {

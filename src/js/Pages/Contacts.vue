@@ -1,6 +1,6 @@
 <template>
   <div class="contacts-container">
-    <section>
+    <section class="contacts-section">
       <container>
         <navPanel
           colorButton="#fff"
@@ -69,7 +69,7 @@ export default {
     }
   },
   beforeRouteLeave(to, from, next) {
-    this.$scrollTo('.contacts-container', 300, {
+    this.$scrollTo('.contacts-section', 300, {
       container: 'body',
       easing: 'ease',
       offset: 0,
@@ -95,10 +95,14 @@ export default {
 @import '../../assets/scss/utils/vars.scss';
 
 .contacts-container {
-  position: relative;
-  min-height: 100vh;
+  z-index: 29;
 
   section {
+    height: 100vh;
+    @media screen and (max-width: $phoneWidth) {
+      height: auto;
+      min-height: 100vh;
+    }
     z-index: 30;
     background: linear-gradient(
         70.77deg,
@@ -106,9 +110,9 @@ export default {
         rgba(30, 114, 69, 0.87) 100%
       ),
       #1a5a38;
-    height: 100%;
 
     .contact-wrapper {
+      height: 100%;
       display: flex;
       justify-content: space-between;
       margin: 16.4% 0 16.4% 0;
@@ -117,6 +121,8 @@ export default {
       }
       @media screen and (max-width: $desktopWidth) {
         flex-direction: column;
+        justify-content: flex-start;
+
         margin: 8.36% 0 12.9% 0;
       }
       @media screen and (max-width: $smDesktopWidth) {
