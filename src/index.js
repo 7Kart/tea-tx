@@ -35,6 +35,7 @@ Vue.directive("scrollanimation", AnimationScroll);
 
 Vue.use(VueRouter);
 Vue.use(VueScrollTo);
+
 // Vue init
 const app = new Vue({
   el: '#app',
@@ -45,6 +46,7 @@ const app = new Vue({
       closeMenu: false
     }
   },
+
   mounted() {
     document.dispatchEvent(new Event('custom-render-trigger'))
   }

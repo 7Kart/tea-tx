@@ -14,60 +14,37 @@
         <div v-if="!isMobile" class="project-list-container">
           <projectCard
             class="partner-card"
-            v-for="(partner, index) in partners"
+            v-for="(project, index) in projects"
             :key="index"
-            :domainName="partner.domainName"
-            :description="partner.description"
-            :linkPath="partner.linkPath"
-            :imgSrc="partner.imgSrc"
+            :domainName="project.domainName"
+            :description="project.description"
+            :linkPath="project.linkPath"
+            :imgSrc="project.imgSrc"
           />
         </div>
       </div>
     </container>
-    <div
-      v-if="isMobile"
-      class="project-list-container project-list-container-mobile"
-    >
-      <swiper :options="swiperOption" ref="mySwiper">
-        <!-- slides -->
-        <swiper-slide v-for="(partner, index) in partners" :key="index">
-          <projectCard
-            class="partner-card"
-            :domainName="partner.domainName"
-            :description="partner.description"
-            :linkPath="partner.linkPath"
-            :imgSrc="partner.imgSrc"
-        /></swiper-slide>
-      </swiper>
-    </div>
+    <projectSlider :isMobileFlag="isMobile" :projectsArr="projects" />
   </section>
 </template>
 
 <script>
 import navPanel from '../system/NavigationPanel.vue'
 import container from '../system/Container.vue'
-import projectCard from './PartnerCard.vue'
-
-import 'swiper/dist/css/swiper.css'
-
-import { swiper, swiperSlide } from 'vue-awesome-swiper'
+import projectCard from './ProjectCard.vue'
+import projectSlider from './ProjectSlider.vue'
 
 export default {
   components: {
     navPanel,
     container,
     projectCard,
-    swiper,
-    swiperSlide
+    projectSlider
   },
   data() {
     return {
       isMobile: false,
-      swiperOption: {
-        slidesPerView: 1.4,
-        spaceBetween: 42
-      },
-      partners: [
+      projects: [
         {
           imgSrc: '/assets/img/mintcom.png',
           domainName: 'мята.com',
@@ -107,22 +84,11 @@ export default {
       ]
     }
   },
-    // computed: {
-    //   swiper() {
-    //     return this.$refs.mySwiper.$swiper
-    //   }
-    // },
   mounted() {
     this.isMobile = this.detectMobileWidth()
     window.addEventListener('resize', () => {
       this.isMobile = this.detectMobileWidth()
     })
-
-    // console.log('this.$refs.mySwiper', this.swiper);
-
-    // swiper.slideNext(1000, ()=>{
-    //   console.log('stoped');
-    // });
   },
   methods: {
     detectMobileWidth() {
@@ -147,12 +113,9 @@ section {
       rgba(30, 114, 69, 0.87) 100%
     ),
     #1a5a38;
-  .project-list-container-mobile {
     @media screen and (max-width: $phoneWidth) {
-      margin: 9px 0 0 42px;
-      padding: 0 0 9.9% 0;
+      min-height:  100vh;
     }
-  }
   .desktop-wrapper {
     display: flex;
     justify-content: space-between;
@@ -175,10 +138,7 @@ section {
       margin: 90px 0 0 0;
     }
     .project-list-header {
-      width: 32.2%;
-      @media screen and (max-width: $desktopLgWidth) {
-        width: 31.9%;
-      }
+      width: 40%;
       @media screen and (max-width: $desktopWidth) {
         width: 100%;
       }
@@ -189,14 +149,16 @@ section {
         font-weight: 500;
         font-size: 82px;
         line-height: 100%;
-        margin-top: 61px;
+        padding-top: 61px;
+        position: sticky;
+        top: 0;
         @media screen and (max-width: $desktopLgWidth) {
           font-size: 56px;
-          margin-top: 25px;
+          padding-top: 25px;
         }
         @media screen and (max-width: $desktopWidth) {
+          padding-top: 0;
           margin-bottom: 80px;
-          margin-top: 0;
         }
         @media screen and (max-width: $smDesktopWidth) {
           font-size: 48px;
@@ -205,30 +167,6 @@ section {
         @media screen and (max-width: $phoneWidth) {
           font-size: 42px;
           margin-bottom: 52px;
-        }
-      }
-    }
-    .project-list-container {
-      width: 59.3%;
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      perspective: 500px;
-      transform-style: preserve-3d;
-      @media screen and (max-width: $desktopLgWidth) {
-        width: 59.2%;
-      }
-      @media screen and (max-width: $desktopWidth) {
-        width: 100%;
-      }
-      .partner-card {
-        width: 45%;
-        margin-bottom: 2.9%;
-        &:nth-last-child(-n + 2) {
-          margin-bottom: 0;
-        }
-        @media screen and (max-width: $phoneWidth) {
-          width: 100%;
         }
       }
     }

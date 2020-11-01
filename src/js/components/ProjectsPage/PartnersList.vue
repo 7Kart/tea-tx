@@ -1,7 +1,7 @@
 <template>
   <div class="project-container">
     <div class="projects-row">
-      <projectItem
+      <partnerItem
         class="project-item"
         v-for="(project, index) in projects"
         :key="index"
@@ -13,11 +13,11 @@
 </template>
 
 <script>
-import projectItem from './ProjectItem.vue'
+import partnerItem from './PartnerItem.vue'
 
 export default {
   components: {
-    projectItem
+    partnerItem
   },
   data() {
     return {

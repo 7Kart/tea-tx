@@ -115,22 +115,22 @@ export default {
       height: 100%;
       display: flex;
       justify-content: space-between;
-      margin: 16.4% 0 16.4% 0;
+      margin: 19% 0 19% 0;
       @media screen and (max-width: $desktopLgWidth) {
-        margin: 16.2% 0 16.2% 0;
+        margin: 19% 0 19% 0;
       }
       @media screen and (max-width: $desktopWidth) {
         flex-direction: column;
         justify-content: flex-start;
 
-        margin: 8.36% 0 12.9% 0;
+        margin: 10.3% 0 10.3% 0;
       }
       @media screen and (max-width: $smDesktopWidth) {
-        margin: 11.6% 0 8.9% 0;
+        margin: 13.4% 0 13.4% 0;
       }
 
       @media screen and (max-width: $phoneWidth) {
-        margin: 10.4% 0 9.3% 0;
+        margin: 90px 0 90px 0;
       }
       .text-container {
         width: 32.2%;

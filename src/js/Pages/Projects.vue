@@ -1,22 +1,22 @@
 <template>
   <div class="projects-container">
     <div class="section-contaienr">
-      <partnerSection @menuToggle="onMenuToggle" />
-      <projectSection />
+      <projectsSection @menuToggle="onMenuToggle" />
+      <partnersSection />
     </div>
     <footer-app />
   </div>
 </template>
 
 <script>
-import partnerSection from '../components/ProjectsPage/PartnerSection.vue'
-import projectSection from '../components/ProjectsPage/ProjectSection.vue'
+import projectsSection from '../components/ProjectsPage/ProjectsSection.vue'
+import partnersSection from '../components/ProjectsPage/PartnersSection.vue'
 import footerApp from '../components/system/Footer.vue'
 
 export default {
   components: {
-    partnerSection,
-    projectSection,
+    projectsSection,
+    partnersSection,
     footerApp
   },
   methods: {

@@ -53,6 +53,14 @@ export default {
     }
   },
 
+  watch: {
+    linkColor(color) {
+      for (let path of this.$refs.svgExtLink.getElementsByTagName('path')) {
+        path.style.fill = color;
+      }
+    }
+  },
+
   methods: {
     onMouseOver() {
       this.$el.style.color = this.hoverColor
@@ -68,11 +76,10 @@ export default {
     }
   },
 
-  mounted(){
-    if(this.linkText.length > 0){
+  mounted() {
+    if (this.linkText.length > 0) {
       this.linkText.length > 0
-      this.$refs.svgExtLink.style.marginLeft = "36px";
-
+      this.$refs.svgExtLink.style.marginLeft = '36px'
     }
   },
 
@@ -99,9 +106,9 @@ a {
   line-height: 176.9%;
   align-items: center;
   text-decoration: underline;
-  transition: color.2s ease;
+  transition: color 0.3s ease;
   &:hover {
-    transition: color.2s ease;
+    transition: fill 0.3s ease;
   }
   @media screen and (max-width: $desktopLgWidth) {
     font-size: 22px;
@@ -115,7 +122,7 @@ a {
 
   svg {
     path {
-      transition: color.2s ease;
+      transition: fill 0.3s ease;
     }
     // margin-left: 36px;
   }

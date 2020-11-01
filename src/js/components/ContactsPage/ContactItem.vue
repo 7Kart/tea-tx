@@ -50,11 +50,17 @@ export default {
     line-height: 176.9%;
     text-decoration-line: underline;
     color: #ee5b5b;
+    cursor: pointer;
+    transition: color 0.3s ease;
     @media screen and (max-width: $desktopLgWidth) {
       font-size: 22px;
     }
     @media screen and (max-width: $desktopWidth) {
       font-size: 24px;
+    }
+    &:hover {
+      transition: color 0.3s ease;
+      color: #d85c4e;
     }
   }
 }
