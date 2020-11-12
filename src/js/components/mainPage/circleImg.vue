@@ -123,15 +123,15 @@ export default {
 
 .three-point-img {
   position: relative;
-  margin: 164px 0;
+  margin: 154px 0;
   @media screen and (max-width: $desktopLgWidth) {
-    margin: 152px 0;
+    margin: 142px 0;
   }
   @media screen and (max-width: $desktopWidth) {
-    margin: 80px 0;
+    margin: 70px 0;
   }
   @media screen and (max-width: $phoneWidth) {
-    margin: 52px 0;
+    margin: 42px 0;
   }
 
   .up-border {

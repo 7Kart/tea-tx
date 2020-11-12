@@ -23,22 +23,19 @@ export default {
     swiperSlide,
     partnerItem
   },
-  computed:{
-    chunkPartners(){
-    
-    }
+  computed: {
+    chunkPartners() {}
   },
   data() {
     return {
       swiperOption: {
-        speed: 6000,
+        speed: 1000,
         loop: true,
         slidesPerView: 5,
-
-
         slidesPerColumn: 2,
         spaceBetween: 40,
         wrapperClass: 'partners-swiper-wrapper',
+
         autoplay: {
           delay: 0,
           // reverseDirection: true,
