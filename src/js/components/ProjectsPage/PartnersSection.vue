@@ -4,7 +4,7 @@
       <div class="projects-container">
         <div class="project-text-container">
           <h2>Партнеры</h2>
-          <p>
+          <p class="default-text">
             Жизнь в чае привела нас к жизни в Китае. Теперь, оглядываясь назад,
             можно увидеть как путь вел нас в эту. Жизнь в чае привела нас к
             жизни в Китае. Теперь, оглядываясь назад, можно увидеть как путь вел
@@ -172,48 +172,26 @@ section {
         width: 100%;
       }
       h2 {
-        font-family: 'Spectral';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 82px;
-        line-height: 100%;
         color: #1a5a38;
-        @media screen and (max-width: $desktopLgWidth) {
-          font-size: 56px;
-        }
-        @media screen and (max-width: $smDesktopWidth) {
-          font-size: 48px;
-        }
-
-        @media screen and (max-width: $phoneWidth) {
-          font-size: 42px;
-        }
       }
 
       p {
-        font-family: 'Spectral';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 21px;
-        line-height: 165%;
         color: #404040;
         padding: 9.5% 0 6.5% 0;
         @media screen and (max-width: $desktopLgWidth) {
-          font-size: 18px;
-          line-height: 156%;
           padding: 9.9% 0 8.2% 0;
         }
+        
         @media screen and (max-width: $desktopWidth) {
-          font-size: 21px;
           padding: 4.8% 0 6.4% 0;
         }
+
         @media screen and (max-width: $smDesktopWidth) {
-          font-size: 18px;
           padding: 5.6% 0 8.9% 0;
         }
 
         @media screen and (max-width: $phoneWidth) {
-          padding: 38px 0 42.3px 0;
+          padding: 42px 0 42px 0;
         }
       }
     }

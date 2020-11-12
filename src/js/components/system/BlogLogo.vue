@@ -16,19 +16,26 @@
 
 .blog-logo-container {
   position: relative;
-  @media screen and(max-width:$smDesktopWidth) {
-    width: 50%;
-    margin: 0 auto;
+
+  margin: 85px 0;
+
+  @media screen and (max-width: $desktopWidth) {
+    margin: 76px 0;
   }
 
-  @media screen and(max-width:$tableWidth) {
-    width: 70%;
+  @media screen and(max-width:$smDesktopWidth) {
+    width: 50%;
+    margin: 60px auto;
   }
 
   @media screen and(max-width:$tableWidth) {
     width: 100%;
   }
-  
+
+  @media screen and (max-width: $phoneWidth) {
+    margin: 52px 0;
+  }
+
   img {
     width: 100% !important;
   }

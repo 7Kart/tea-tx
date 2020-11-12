@@ -42,6 +42,7 @@ export default {
   },
   mounted() {
     this.$nextTick(() => {
+      console.log('mounted promo')
       this.$refs.promoText.classList.add('appearance-promo-text')
     })
   },
@@ -59,17 +60,22 @@ export default {
 @import '../../../assets/scss/utils/grid.scss';
 
 .promo-container {
-  background-image: url('../../../assets/img/main-img.png');
+  background-image: url('../../../assets/img/promo/main-img-sm.jpg');
   height: 100vh;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
 
   .menu-button-container {
-    margin-top: 126px;
     text-align: right;
-    @media screen and (max-width: $smTableWidth) {
-      margin-top: 60px;
+    margin-top: 126px;
+
+    @media screen and (max-width: $desktopWidth) {
+      margin-top: 86px;
+    }
+
+    @media screen and (max-width: $phoneWidth) {
+      margin-top: 46px;
     }
   }
 
@@ -87,7 +93,12 @@ export default {
     }
 
     @media screen and (max-width: $phoneWidth) {
+      margin-top: 70px;
       margin-bottom: 0;
+    }
+
+    @media screen and (max-width: $smPhoneWidth) {
+      margin-top: 35px;
     }
   }
 
@@ -105,17 +116,24 @@ export default {
       flex-direction: column-reverse;
       justify-content: flex-end;
     }
+    @media screen and (max-width: $phoneWidth) {
+      justify-content: space-between;
+    }
     p {
       font-size: 36px;
       line-height: 136%;
       color: white;
-      width: 703px;
+      // width: 703px;
+      width: calc(50%-65px);
 
+      font-family: 'Spectral';
+      font-style: normal;
+      font-weight: 500;
       transform: translate(0px, 100%) rotateX(-45deg);
       opacity: 0;
       &.appearance-promo-text {
         transition: all 1.5s ease;
-        transition-delay: .1s;
+        transition-delay: 0.1s;
         transform: rotateX(0) translate(0px, 0px);
         opacity: 1;
       }
@@ -123,19 +141,25 @@ export default {
       @media screen and (max-width: $desktopLgWidth) {
         font-size: 32px;
         line-height: 136%;
-        width: 519px;
+        // width: 519px;
+        width: calc(50%-50px);
       }
 
       @media screen and (max-width: $desktopWidth) {
         font-size: 32px;
         line-height: 134.1%;
-        width: 477px;
+        // width: 477px;
+        width: calc(50%-38px);
       }
 
       @media screen and (max-width: $smDesktopWidth) {
         font-size: 28px;
         line-height: 134.1%;
-        width: 550px;
+        width: 500px;
+      }
+
+      @media screen and (max-width: $tableWidth) {
+        width: 250px;
       }
 
       @media screen and (max-width: $smTableWidth) {
@@ -145,8 +169,13 @@ export default {
       }
 
       @media screen and (max-width: $phoneWidth) {
-        font-size: 5vw;
-        line-height: 110%;
+        font-size: 26px;
+        line-height: 134%;
+      }
+
+      @media screen and (max-width: $smPhoneWidth) {
+        font-size: 22px;
+        line-height: 134%;
       }
     }
   }

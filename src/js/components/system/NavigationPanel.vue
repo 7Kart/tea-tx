@@ -94,7 +94,7 @@ export default {
       line-height: 30px;
     }
     @media screen and (max-width: $phoneWidth) {
-      font-size: 18px;
+      font-size: 16px;
       line-height: 27px;
     }
     transition: color, 0.3s ease !important;
@@ -131,10 +131,11 @@ export default {
       }
 
       @media screen and (max-width: $phoneWidth) {
-        margin-right: 20px;
+        margin-right: 15px;
+        width: 16px;
+        height: 20px;
       }
     }
   }
 }
-
 </style>

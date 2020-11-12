@@ -10,7 +10,7 @@
             text-clr="#D4D7CC"
           />
         </div>
-        <div>
+        <div class="list-container">
           <ul class="menu-list">
             <li><router-link to="/">О нас</router-link></li>
             <li><router-link to="/experience">Опыт</router-link></li>
@@ -18,7 +18,7 @@
             <li>
               <router-link to="/contacts">Контакты </router-link>
             </li>
-            <li><router-link to="/experience">Блог</router-link></li>
+            <li><a href="https://teawall.ru/" target="_blank">Блог</a></li>
           </ul>
           <ul class="social-link-list">
             <li>
@@ -62,26 +62,6 @@ export default {
     container,
     footerMenuLogo,
     addressBlock
-  },
-
-  data() {
-    return {
-      offsetPerc: 0
-    }
-  },
-
-  methods: {
-    scrollHandler(e) {
-      let scrollTop = window.pageYOffset || document.documentElement.scrollTop
-      // console.log('!!!', this.$el.offsetHeight, this.$el.offsetTop, scrollTop)
-
-      // let offset = this.$el.offsetHeight - (scrollTop - this.$el.offsetTop)
-
-      // if (offset > 0) {
-      //   this.offsetPerc =
-      //     -1 * Math.floor((100 * offset) / this.$el.offsetHeight / 2)
-      // }
-    }
   }
 }
 </script>
@@ -90,14 +70,16 @@ export default {
 @import '../../../assets/scss/utils/vars.scss';
 
 footer {
-  // position: relative;
+  position: relative;
   z-index: 10;
   background-color: #d4d7cc;
   position: sticky;
   bottom: 0;
   left: 0;
-  // transform: translate3d(0px, -50%, 0px);
-  transition: transform 0.2s ease-out;
+
+  @media screen and (max-width: $phoneWidth) {
+    height: 100vh;
+  }
 
   .footer-wrapper {
     margin: 81px 0 25px 0;
@@ -111,10 +93,13 @@ footer {
       margin: 0;
       padding: 47px 0 25px 0;
     }
+    @media screen and (max-width: $smPhoneWidth) {
+         padding: 15px 0 10px 0;
+    }
     & > div {
       &:first-child {
         width: calc((50%-65px) / 2);
-        display: flex;
+        // display: flex;
         @media screen and (max-width: $desktopLgWidth) {
           width: calc((50%-50px) / 2+50px);
         }
@@ -125,11 +110,18 @@ footer {
           width: 50%;
           margin-bottom: 42px;
         }
+        @media screen and (max-width: $phoneWidth) {
+          width: 70%;
+          margin-bottom: 0;
+        }
+
+        @media screen and(max-width:$smPhoneWidth) {
+          width: 60%;
+        }
       }
       &:nth-child(2) {
         display: flex;
         width: calc(50%-65px);
-
         @media screen and (max-width: $desktopLgWidth) {
           width: calc(50%-50px);
         }
@@ -138,6 +130,12 @@ footer {
         }
         @media screen and (max-width: $smTableWidth) {
           width: 65%;
+        }
+        @media screen and (max-width: $phoneWidth) {
+          padding: 42px 0 42px 0;
+        }
+        @media screen and(max-width:$smPhoneWidth) {
+          padding: 0;
         }
         ul {
           font-style: normal;
@@ -233,11 +231,17 @@ footer {
       justify-content: space-between;
       align-items: center;
       margin-top: 100px;
+
       @media screen and(max-width:$smTableWidth) {
         flex-direction: column-reverse;
         align-items: flex-start;
         margin-top: 50px;
       }
+
+      @media screen and(max-width: $phoneWidth) {
+        margin-top: 0px;
+      }
+
       div {
         font-family: 'Raleway';
         font-style: normal;

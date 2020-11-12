@@ -13,11 +13,11 @@
         </div>
         <div class="stat-text-contaiuner">
           <h2>Статистика компании</h2>
-          <p>
+          <p class="default-text">
             Жизнь в чае привела нас к жизни в Китае. Теперь, оглядываясь назад,
             можно увидеть как путь вел нас в эту.
           </p>
-          <p>
+          <p class="default-text">
             По сотрудничеству с нами вы можете связаться на нашей странице
             контактов
           </p>
@@ -52,8 +52,8 @@ export default {
 section {
   position: relative;
   z-index: 30;
-  background-color:$background-color ;
-  border-bottom: 2px solid #1A5A38;
+  background-color: $background-color;
+  border-bottom: 2px solid #1a5a38;
 }
 
 .command-statistic-container {
@@ -74,7 +74,7 @@ section {
   }
 
   @media screen and (max-width: $phoneWidth) {
-    margin: 9.1% 0 9.2% 0;
+    margin: 90px 0 90px 0;
   }
   .img-container {
     margin-right: 130px;
@@ -105,58 +105,26 @@ section {
     }
 
     @media screen and (max-width: $phoneWidth) {
-      margin: 0 0 9.2% 0;
+      margin: 0 0 52px 0;
     }
     h2 {
-      font-family: 'Spectral';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 82px;
-      line-height: 100%;
       color: #1a5a38;
-      @media screen and (max-width: $desktopLgWidth) {
-        font-size: 56px;
-        line-height: 100%;
+      @media screen and (max-width: $desktopWidth) {
+        margin-bottom: 38px;
       }
-
-      @media screen and (max-width: $smDesktopWidth) {
-        font-size: 48px;
-        line-height: 100%;
-      }
-
       @media screen and (max-width: $phoneWidth) {
-        font-size: 42px;
-        line-height: 100%;
+        margin-bottom: 42px;
+      }
+    }
+
+    a {
+      @media screen and (max-width: $phoneWidth) {
+        margin-top: 22px;
       }
     }
 
     p {
-      font-family: 'Spectral';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 21px;
-      line-height: 165%;
       color: $neutral-primary;
-
-      @media screen and (max-width: $desktopLgWidth) {
-        font-size: 18px;
-        line-height: 156%;
-      }
-
-      @media screen and (max-width: $desktopWidth) {
-        font-size: 21px;
-        line-height: 165%;
-      }
-
-      @media screen and (max-width: $smDesktopWidth) {
-        padding-top: 38px;
-        font-size: 18px;
-      }
-
-      @media screen and (max-width: $phoneWidth) {
-        font-size: 18px;
-        line-height: 156%;
-      }
     }
   }
 }

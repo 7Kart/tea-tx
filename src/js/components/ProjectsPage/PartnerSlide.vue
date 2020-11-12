@@ -23,33 +23,59 @@ export default {
     swiperSlide,
     partnerItem
   },
-
+  computed:{
+    chunkPartners(){
+    
+    }
+  },
   data() {
     return {
       swiperOption: {
-        notNextTick: true,
-        speed: 3000,
+        speed: 6000,
         loop: true,
         slidesPerView: 5,
-        // slidesPerGroup: 5,
-        loop: true,
-        // loopFillGroupWithBlank: true,
+
+
         slidesPerColumn: 2,
         spaceBetween: 40,
         wrapperClass: 'partners-swiper-wrapper',
         autoplay: {
           delay: 0,
-          reverseDirection: true
+          // reverseDirection: true,
+          disableOnInteraction: false
         },
         breakpoints: {
           480: {
             slidesPerView: 3,
             slidesPerColumn: 3,
+            speed: 6000
             // spaceBetween: 20
           }
         }
       }
     }
+  },
+
+  mounted() {
+    console.log('mounted slider section')
+    this.$nextTick(() => {
+      this.$refs.pertnerSwiper.swiper.autoplay.stop()
+
+      let observer = new IntersectionObserver((enties, observer) => {
+        enties.forEach(entry => {
+          if (
+            entry.isIntersecting &&
+            !this.$refs.pertnerSwiper.swiper.autoplay.running
+          ) {
+            console.log('activate')
+
+            this.$refs.pertnerSwiper.swiper.autoplay.start()
+          }
+        })
+      })
+
+      observer.observe(this.$el)
+    })
   },
 
   props: {
@@ -63,24 +89,14 @@ export default {
 
 <style lang="scss">
 .partners-swiper-wrapper {
-  position: relative;
+  // position: relative;
   width: 100%;
   height: 100%;
   z-index: 1;
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
   display: flex;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  -o-transition-property: transform;
   transition-property: transform;
-  transition-property: transform, -webkit-transform;
-  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   transition-timing-function: linear;
-  -webkit-flex-wrap: wrap;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
 }
 </style>

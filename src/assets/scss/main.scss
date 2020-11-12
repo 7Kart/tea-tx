@@ -1,15 +1,15 @@
-@import 'utils/libs';
-@import 'utils/vars';
-@import 'utils/mixins';
-@import 'utils/fonts';
-@import 'utils/reset';
+@import "utils/libs";
+@import "utils/vars";
+@import "utils/mixins";
+@import "utils/fonts";
+@import "utils/reset";
 
 html {
   line-height: $mainLineHeight;
   font-size: $mainFontSize;
   color: $mainFontColor;
   height: 100%;
-  background-color: $background-color ;
+  background-color: $background-color;
   @media screen and (max-width: $desktopWidth) {
     font-size: 16px;
   }
@@ -46,6 +46,49 @@ h6 {
   margin: 0;
 }
 
+h2 {
+  font-size: 82px;
+  line-height: 100%;
+  font-family: "Spectral";
+  font-weight: 00;
+
+  @media screen and (max-width: $desktopLgWidth) {
+    font-size: 56px;
+  }
+  @media screen and (max-width: $smDesktopWidth) {
+    font-size: 48px;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 42px;
+  }
+}
+
+.default-text {
+  font-family: "Spectral";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 165%;
+  color: #404040;
+
+  @media screen and (max-width: $desktopLgWidth) {
+    font-size: 18px;
+    line-height: 156%;
+  }
+  @media screen and (max-width: $desktopWidth) {
+    font-size: 21px;
+    line-height: 165%;
+  }
+  @media screen and (max-width: $smDesktopWidth) {
+    font-size: 18px;
+    line-height: 156%;
+  }
+  @media screen and (max-width: $phoneWidth) {
+    font-size: 18px;
+    line-height: 156%;
+  }
+}
+
 a {
   text-decoration: none;
 }
@@ -60,16 +103,6 @@ li {
 section,
 .section {
   position: relative;
-  // padding: 40px 0;
-  // @media screen and (max-width: $smDesktopWidth) {
-  //   padding: 36px 0;
-  // }
-  // @media screen and (max-width: $tableWidth) {
-  //   padding: 28px 0;
-  // }
-  // @media screen and (max-width: $phoneWidth) {
-  //   padding: 20px 0;
-  // }
 }
 
 // .wrapper {

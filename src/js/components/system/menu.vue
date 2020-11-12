@@ -116,7 +116,7 @@ export default {
       margin-top: 86px;
     }
     @media screen and (max-width: $phoneWidth) {
-      margin: 48px 0;
+      margin: 48px 0 90px 0;
     }
     display: flex;
     flex-direction: column;
@@ -125,6 +125,18 @@ export default {
     height: 100%;
     justify-content: space-between;
     .close-bar {
+      svg {
+        @media screen and (max-width: $phoneWidth) {
+          width: 16px;
+        }
+      }
+
+      .close-text {
+        @media screen and (max-width: $phoneWidth) {
+          font-size: 16px;
+        }
+      }
+
       div {
         display: flex;
         font-weight: bold;
@@ -134,10 +146,10 @@ export default {
           fill: #e7e7e7;
           color: #e7e7e7;
 
-          transition: fill, color, .3s ease;
+          transition: fill, color, 0.3s ease;
         }
-        path{
-          transition: fill .3s ease;
+        path {
+          transition: fill 0.3s ease;
         }
         span {
           cursor: pointer;
@@ -147,17 +159,20 @@ export default {
           &:first-child {
             margin-right: 36px;
             font-size: 30px;
+            @media screen and (max-width: $phoneWidth) {
+              margin-right: 16px;
+            }
           }
-          
+
           &.close-text {
             font-size: 24px;
-            transition: color .3s ease;
+            transition: color 0.3s ease;
 
             @media screen and (max-width: $smDesktopWidth) {
               font-size: 20px;
             }
             @media screen and (max-width: $phoneWidth) {
-              font-size: 18px;
+              font-size: 16px;
             }
           }
         }
@@ -181,7 +196,7 @@ export default {
           font-size: 48px;
         }
         @media screen and (max-width: $phoneWidth) {
-          font-size: 42px;
+          font-size: 36px;
         }
         ul {
           li {
@@ -321,11 +336,10 @@ export default {
 
 .menu-fade-enter-active {
   // transition: all 0.3s ease;
-  transition: all 0.7s ease;
-
+  transition: all 0.4s ease;
 }
 .menu-fade-leave-active {
-  transition: all 0.7s ease;
+  transition: all 0.4s ease;
 }
 .menu-fade-enter,
 .menu-fade-leave-to {

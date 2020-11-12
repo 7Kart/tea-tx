@@ -1,7 +1,7 @@
 <template>
   <span :style="textStyle" @mouseover="onMouseOver" @mouseout="onMouseout">
-    {{ arrowText
-    }}<svg
+    <p>{{ arrowText }}</p>
+    <svg
       :width="arrWidth"
       :height="arrHeight"
       :viewBox="viewBox"
@@ -75,8 +75,10 @@ span {
   font-size: 26px;
   line-height: 176.9%;
   text-decoration-line: underline;
-
+  display: flex;
+  align-items: center;
   transition: color 0.2s ease;
+  width: fit-content;
   &:hover {
     transition: color 0.2s ease;
   }
@@ -90,9 +92,19 @@ span {
   @media screen and (max-width: $phoneWidth) {
     font-size: 20px;
   }
-
+  p {
+    @media screen and (max-width: $smPhoneWidth) {
+      // width: 70%;
+    }
+  }
   svg {
+    flex: 1;
     margin-left: 24px;
+    @media screen and (max-width: $smPhoneWidth) {
+      margin-left: 5px;
+      min-width: 20%;
+      margin-left: 10px;
+    }
   }
 }
 </style>

@@ -6,7 +6,7 @@
     @mouseover="onMouseOver"
     @mouseout="onMouseOut"
   >
-    {{ linkText }}
+    <p>{{ linkText }}</p>
 
     <svg
       ref="svgExtLink"
@@ -56,7 +56,7 @@ export default {
   watch: {
     linkColor(color) {
       for (let path of this.$refs.svgExtLink.getElementsByTagName('path')) {
-        path.style.fill = color;
+        path.style.fill = color
       }
     }
   },
@@ -79,7 +79,7 @@ export default {
   mounted() {
     if (this.linkText.length > 0) {
       this.linkText.length > 0
-      this.$refs.svgExtLink.style.marginLeft = '36px'
+      this.$refs.svgExtLink.style.marginLeft = document.body.offsetWidth > 330 ? '36px' : "15px"
     }
   },
 
@@ -107,6 +107,7 @@ a {
   align-items: center;
   text-decoration: underline;
   transition: color 0.3s ease;
+
   &:hover {
     transition: fill 0.3s ease;
   }
@@ -123,6 +124,9 @@ a {
   svg {
     path {
       transition: fill 0.3s ease;
+    }
+    @media screen and (max-width: $smPhoneWidth ) {
+      font-size: 5px;
     }
     // margin-left: 36px;
   }

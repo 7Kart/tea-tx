@@ -49,7 +49,7 @@ span {
   }
 
   @media screen and(max-width: $phoneWidth ) {
-    font-size: 18px;
+    font-size: 16px;
     line-height: 27px;
   }
   transition: color 0.3s ease;

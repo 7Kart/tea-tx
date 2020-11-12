@@ -68,7 +68,7 @@ export default {
   }
   .partner-card {
     width: 45%;
-    margin-bottom: 2.9%;
+    margin-bottom: 15%;
     &:nth-last-child(-n + 2) {
       margin-bottom: 0;
     }

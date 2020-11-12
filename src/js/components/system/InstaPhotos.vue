@@ -16,7 +16,6 @@
         id="text-info-1"
         textContent="работа с крупными брендами"
         fontClass="middle-circle"
-      
       />
       <infoCicle
         class="circle-inform-block"
@@ -31,7 +30,6 @@
         headerContent="24/7"
         textContent="на связи с клиентами"
         fontClass="small-circle"
-
       />
       <insta-photo id="insta-photo-3" :instaSrc="instaImg[2].imgRes[2]" />
       <insta-photo id="insta-photo-4" :instaSrc="instaImg[3].imgRes[2]" />
@@ -76,20 +74,20 @@ export default {
 <style lang="scss" scoped>
 @import '../../../assets/scss/utils/vars.scss';
 .insta-image-container {
-  margin-top: 6.8%;
+  margin-top: 84px;
   @media screen and (max-width: $desktopLgWidth) {
-    margin-top: 9.5%;
+    margin-top: 96px;
   }
 
   @media screen and (max-width: $desktopWidth) {
-    margin-top: 8.3%;
+    margin-top: 73px;
   }
 
   @media screen and (max-width: $smDesktopWidth) {
-    margin-top: 4.4%;
+    margin-top: 50px;
   }
   @media screen and (max-width: $phoneWidth) {
-    margin-top: 3.5%;
+    margin-top: 38px;
   }
   .insta-wrapper {
     display: flex;

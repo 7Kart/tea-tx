@@ -1,7 +1,6 @@
 <template>
-  <svg :id="idEl"
-    width="416"
-    height="416"
+  <svg
+    :id="idEl"
     viewBox="0 0 416 416"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
@@ -25,25 +24,25 @@
 
 <script>
 export default {
-    props:{
-        bckgrndClr:{
-            type: String,
-            default: "#E3E7DA"            
-        },
-        textClr:{
-            type: String,
-            default: "#47645F"           
-        },
-        idEl:{
-            type: String,
-            required: true
-        }
+  props: {
+    bckgrndClr: {
+      type: String,
+      default: '#E3E7DA'
+    },
+    textClr: {
+      type: String,
+      default: '#47645F'
+    },
+    idEl: {
+      type: String,
+      required: true
     }
+  }
 }
 </script>
 
 <style scoped>
-  svg{
-    height: auto;
-  }
+svg {
+  height: auto;
+}
 </style>

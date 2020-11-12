@@ -11,7 +11,7 @@
         <div class="contact-wrapper">
           <div class="text-container">
             <h2>Контакты</h2>
-            <p>
+            <p class="default-text">
               Если у вас есть вопросы по поводу заказа, наших продуктов или
               нашего веб-сайта,
             </p>
@@ -26,6 +26,7 @@
                 <contactItem
                   :contactType="contact.contactType"
                   :contactValue="contact.contactValue"
+                  :metaType="contact.metaType"
                 />
               </li>
             </ul>
@@ -55,15 +56,18 @@ export default {
       contacts: [
         {
           contactType: 'Общие вопросы',
-          contactValue: 'teatx@gmail.com'
+          contactValue: 'teatx@gmail.com',
+          metaType: 'mailto'
         },
         {
           contactType: 'По вопросам сотрудничества',
-          contactValue: 'eatmore@gmail.com'
+          contactValue: 'eatmore@gmail.com',
+          metaType: 'mailto'
         },
         {
           contactType: 'Телефон',
-          contactValue: '899912345333'
+          contactValue: '899912345333',
+          metaType: 'tel'
         }
       ]
     }
@@ -115,9 +119,9 @@ export default {
       height: 100%;
       display: flex;
       justify-content: space-between;
-      margin: 19% 0 19% 0;
+      margin: 14% 0 14% 0;
       @media screen and (max-width: $desktopLgWidth) {
-        margin: 19% 0 19% 0;
+        margin: 13% 0 13% 0;
       }
       @media screen and (max-width: $desktopWidth) {
         flex-direction: column;
@@ -144,47 +148,21 @@ export default {
 
         h2 {
           color: white;
-          font-family: 'Spectral';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 82px;
-          line-height: 100%;
-
-          @media screen and (max-width: $desktopLgWidth) {
-            font-size: 56px;
-          }
-          @media screen and (max-width: $smDesktopWidth) {
-            font-size: 48px;
-          }
-
-          @media screen and (max-width: $phoneWidth) {
-            font-size: 42px;
-          }
         }
 
         p {
-          font-family: 'Spectral';
-          font-style: normal;
-          font-weight: 600;
-          font-size: 21px;
-          line-height: 165%;
           color: #fff;
           padding: 80px 0 0 0;
-          @media screen and (max-width: $desktopLgWidth) {
-            font-size: 18px;
-            line-height: 156%;
-          }
+
           @media screen and (max-width: $desktopWidth) {
-            font-size: 21px;
-            padding: 38px 0 56px 0;
+            padding: 42px 0 56px 0;
           }
           @media screen and (max-width: $smDesktopWidth) {
-            font-size: 18px;
-            padding: 38px 0 46px 0;
+            padding: 42px 0 46px 0;
           }
 
           @media screen and (max-width: $phoneWidth) {
-            padding: 38px 0 52px 0;
+            padding: 42px 0 52px 0;
           }
         }
       }

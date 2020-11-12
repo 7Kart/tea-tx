@@ -25,6 +25,10 @@ export default {
     this.$nextTick(() => {
       this.$refs.svgLogo.classList.add('appearance-logo')
     })
+  },
+  beforeRouteLeave(to, from, next) {
+    this.$refs.svgLogo.classList.remove('appearance-logo')
+    next()
   }
 }
 </script>
@@ -48,7 +52,7 @@ export default {
     transform: translate(0px, 100%) rotateX(-45deg);
     opacity: 0;
     &.appearance-logo {
-      transition: all 1.5s ease;
+      transition: transform 1.5s ease;
       transform: rotateX(0) translate(0px, 0px);
       opacity: 1;
     }

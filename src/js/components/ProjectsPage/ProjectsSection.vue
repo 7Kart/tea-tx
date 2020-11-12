@@ -9,7 +9,7 @@
       />
       <div class="desktop-wrapper">
         <div class="project-list-header">
-          <h2>Наши проекты</h2>
+          <h2>Наши <br />проекты</h2>
         </div>
         <div v-if="!isMobile" class="project-list-container">
           <projectCard
@@ -113,9 +113,9 @@ section {
       rgba(30, 114, 69, 0.87) 100%
     ),
     #1a5a38;
-    @media screen and (max-width: $phoneWidth) {
-      min-height:  100vh;
-    }
+  @media screen and (max-width: $phoneWidth) {
+    min-height: 100vh;
+  }
   .desktop-wrapper {
     display: flex;
     justify-content: space-between;
@@ -144,29 +144,45 @@ section {
       }
       h2 {
         color: white;
-        font-family: 'Spectral';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 82px;
-        line-height: 100%;
         padding-top: 61px;
         position: sticky;
         top: 0;
         @media screen and (max-width: $desktopLgWidth) {
-          font-size: 56px;
           padding-top: 25px;
         }
         @media screen and (max-width: $desktopWidth) {
-          padding-top: 0;
+          padding-top: 0px;
+          
           margin-bottom: 80px;
-        }
-        @media screen and (max-width: $smDesktopWidth) {
-          font-size: 48px;
         }
 
         @media screen and (max-width: $phoneWidth) {
-          font-size: 42px;
           margin-bottom: 52px;
+        }
+      }
+    }
+
+    .project-list-container {
+      width: 59.3%;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      perspective: 500px;
+      transform-style: preserve-3d;
+      @media screen and (max-width: $desktopLgWidth) {
+        width: 59.2%;
+      }
+      @media screen and (max-width: $desktopWidth) {
+        width: 100%;
+      }
+      .partner-card {
+        width: 45%;
+        margin-bottom: 7%;
+        &:nth-last-child(-n + 2) {
+          margin-bottom: 0;
+        }
+        @media screen and (max-width: $phoneWidth) {
+          width: 100%;
         }
       }
     }

@@ -25,16 +25,16 @@
 
 <script>
 export default {
-  props:{
+  props: {
     textColor: {
       type: String,
-      default: "#FFF"
+      default: '#FFF'
     }
   },
-  computed:{
-    compStyle(){
+  computed: {
+    compStyle() {
       return {
-        "text-color": this.textColor
+        'text-color': this.textColor
       }
     }
   }
@@ -62,6 +62,9 @@ export default {
     // color: $neutral-primary;
     @media screen and(max-width:$desktopWidth) {
       font-size: 18px;
+    }
+    @media screen and(max-width:$smPhoneWidth) {
+      font-size: 14px;
     }
   }
   svg {

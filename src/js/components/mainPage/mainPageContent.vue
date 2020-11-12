@@ -19,8 +19,8 @@
               </picture>
             </div>
             <div>
-              <h2>О нас</h2>
-              <p>
+              <h2 class="default-header">О нас</h2>
+              <p class="default-text">
                 Жизнь в чае привела нас к жизни в Китае. Теперь, оглядываясь
                 назад, можно увидеть как путь вел нас в эту точку со всей
                 неизбежностью пути. Осень в Гуанчжоу все еще дышит жарой. Но уже
@@ -34,17 +34,18 @@
           </div>
         </container>
       </div>
+      <!-- second section -->
       <div id="second-section">
         <container>
           <div class="column-text-container">
-            <p>
+            <p class="default-text">
               Не то, что бы здесь летом чай не пьют, но вот как-то реже
               встречаются такие компании, рассевшиеся в вокруг маленьких круглых
               чабаней на улице. Наверное, их предпочитают из-за удобства — легко
               выносить-заносить и места мало занимают. Таких вот чайных мелочей
               — здесь множество, и вся наша жизнь выстраивается вокруг чая.
             </p>
-            <p>
+            <p class="default-text">
               Этот сайт посвящен нашим открытиям, находкам и работе с чаем.
               Сейчас уже ясно, что чай — это процесс, который имеет разные
               стадии и это касается не только и не столько обработки чая,
@@ -55,12 +56,14 @@
         </container>
         <imgCircle v-if="windowWidth < 480" />
       </div>
+      <!-- end second section -->
 
+      <!-- third section -->
       <div id="third-section">
         <container>
           <div class="projects-sub-section-container">
             <div class="text-container">
-              <p>
+              <p class="default-text">
                 Сейчас мы Живем в Гуанчжоу, занимаемся чаем и изучаем его со
                 всех сторон. Мы путешествуем по Китаю, общаемся с людьми,
                 которые делают чай, продают его или обучают чайному мастерству,
@@ -89,7 +92,9 @@
           </div>
         </container>
       </div>
+      <!--end third section -->
 
+      <!-- forth section -->
       <div id="forth-section">
         <container>
           <div class="sub-section-blog-container">
@@ -97,7 +102,7 @@
               <blog-logo />
             </div>
             <div class="text-container">
-              <p>
+              <p class="default-text">
                 Мы следим за всеми новостями, связанными с чаем. Посетите наш
                 блог, что бы узнать акутальные события.
               </p>
@@ -109,6 +114,7 @@
           </div>
         </container>
       </div>
+      <!--end forth section -->
     </div>
     <footer-app />
   </div>
@@ -168,6 +174,7 @@ export default {
   font-family: 'Spectral';
   background-color: #ced7cc;
   position: relative;
+  min-height: 100vh;
   .content-wrapper {
     position: relative;
     z-index: 30;
@@ -177,6 +184,9 @@ export default {
     height: 100vh;
     position: relative;
     overflow: hidden;
+    @media screen and (max-width: $phoneWidth) {
+      height: auto;
+    }
     .section-container {
       // margin: 164px 0 164px 0;
       margin: auto;
@@ -185,6 +195,9 @@ export default {
       justify-content: space-between;
       @media screen and (max-width: $desktopWidth) {
         flex-direction: column-reverse;
+      }
+      @media screen and (max-width: $phoneWidth) {
+        padding: 90px 0 52px 0;
       }
       div {
         width: calc(100% / 2-130px);
@@ -210,63 +223,54 @@ export default {
           }
         }
         &:nth-child(2) {
+          width: calc(50%-65px);
+          @media screen and (max-width: $desktopLgWidth) {
+            width: calc(50%-50px);
+          }
+          @media screen and (max-width: $desktopWidth) {
+            width: calc(50%-38px);
+          }
+          @media screen and (max-width: $smDesktopWidth) {
+            width: 100%;
+          }
+
           color: white;
           @media screen and (max-width: $desktopWidth) {
             margin-bottom: 80px;
           }
           @media screen and (max-width: $phoneWidth) {
-            margin-bottom: 38px;
+            margin-bottom: 52px;
           }
           h2 {
-            font-size: 82px;
-            line-height: 100%;
-            font-family: 'Spectral';
-            font-weight: 500;
             padding-top: 61px;
-
             @media screen and (max-width: $desktopHDWidth) {
               padding-top: 20px;
             }
 
             @media screen and (max-width: $desktopLgWidth) {
               padding-top: 25px;
-              font-size: 56px;
             }
             @media screen and (max-width: $smDesktopWidth) {
               padding-top: 0;
-              font-size: 48px;
-            }
-            @media screen and (max-width: $phoneWidth) {
-              font-size: 38px;
             }
           }
           p {
-            font-family: 'Spectral';
-            font-weight: 500;
-            font-size: 21px;
-            line-height: 34px;
+            color: #fff;
             padding: 116px 0 80px 0;
             @media screen and (max-width: $desktopHDWidth) {
               padding: 80px 0 80px 0;
             }
             @media screen and (max-width: $desktopLgWidth) {
               padding: 96px 0 80px 0;
-              font-size: 18px;
-              line-height: 28px;
             }
             @media screen and (max-width: $desktopWidth) {
               padding: 38px 0 46px 0;
-              line-height: 34px;
-              font-size: 21px;
-              line-height: 28px;
             }
             @media screen and (max-width: $smDesktopWidth) {
               padding: 38px 0 38px 0;
-              font-size: 18px;
             }
             @media screen and (max-width: $phoneWidth) {
               padding: 30px 0 30px 0;
-              font-size: 4vw;
             }
           }
         }
@@ -278,7 +282,11 @@ export default {
     }
   }
   #second-section {
-    margin-top: 25px;
+    margin-top: 15px;
+    @media screen and (max-width: $phoneWidth) {
+      margin-top: 0px;
+    }
+
     background-color: $background-color;
     .column-text-container {
       display: flex;
@@ -287,36 +295,36 @@ export default {
       @media screen and (max-width: $smDesktopWidth) {
         flex-direction: column;
       }
-
       p {
         color: $neutral-primary;
-        font-family: 'Spectral';
-
-        font-weight: 500;
-        font-size: 21px;
-        line-height: 165%;
         width: calc(50% - 130px);
-
         @media screen and (max-width: $desktopLgWidth) {
           width: calc(50% - 100px);
-          font-size: 18px;
         }
         @media screen and (max-width: $desktopWidth) {
           width: calc(50% - 77px);
-          font-size: 21px;
         }
         @media screen and (max-width: $smDesktopWidth) {
           width: 100%;
-          font-size: 18px;
+
           &:nth-child(2) {
-            margin-top: 46px;
+            margin-top: 28px;
           }
         }
-        @media screen and (max-width: $phoneWidth) {
-          font-size: 4vw;
+
+        &:nth-child(2) {
+          width: calc(50%-65px);
+
+          @media screen and (max-width: $desktopLgWidth) {
+            width: calc(50%-50px);
+          }
+          @media screen and (max-width: $desktopWidth) {
+            width: calc(50%-38px);
+          }
+          @media screen and (max-width: $smDesktopWidth) {
+            width: 100%;
+          }
         }
-        // @media screen and (max-width: $tableWidth) {
-        // }
       }
     }
   }
@@ -331,7 +339,7 @@ export default {
       margin-bottom: 80px;
     }
     @media screen and (max-width: $phoneWidth) {
-      margin-bottom: 40px;
+      margin-bottom: 90px;
     }
     .projects-sub-section-container {
       display: flex;
@@ -341,7 +349,7 @@ export default {
       }
       .text-container {
         color: $neutral-primary;
-        font-weight: 500;
+        font-weight: 600;
         font-size: 21px;
         line-height: 165%;
         color: $neutral-primary;
@@ -356,25 +364,16 @@ export default {
           margin-bottom: 80px;
           width: 100%;
         }
+        @media screen and (max-width: $phoneWidth) {
+          margin-bottom: 52px;
+        }
         p {
           margin-bottom: 80px;
-          @media screen and (max-width: $desktopLgWidth) {
-            font-size: 18px;
-            line-height: 156%;
-          }
-
           @media screen and(max-width: $desktopWidth) {
             margin-bottom: 40px;
-            font-size: 21px;
-            line-height: 165%;
-          }
-
-          @media screen and (max-width: $smDesktopWidth) {
-            font-size: 18px;
-            line-height: 156%;
           }
           @media screen and (max-width: $phoneWidth) {
-            font-size: 4vw;
+            margin-bottom: 22px;
           }
         }
       }
@@ -417,7 +416,7 @@ export default {
     .sub-section-blog-container {
       justify-content: space-between;
       display: flex;
-      padding: 85px 0;
+      // padding: 85px 0;
       @media screen and (max-width: $smDesktopWidth) {
         flex-direction: column;
       }
@@ -448,27 +447,24 @@ export default {
         @media screen and (max-width: $smDesktopWidth) {
           width: 100%;
         }
-        @media screen and (max-width: $smDesktopWidth) {
-          margin-top: 60px;
-        }
         p {
-          margin-bottom: 80px;
-          font-family: 'Spectral';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 21px;
-          line-height: 165%;
+          // margin-bottom: 80px;
+          color: #fff;
+        }
+
+        a {
+          margin: 80px 0 0 0;
           @media screen and (max-width: $desktopLgWidth) {
-            font-size: 18px;
-            margin-bottom: 86px;
+            margin: 86px 0 0 0;
           }
           @media screen and (max-width: $desktopWidth) {
-            font-size: 21px;
-            margin-bottom: 50px;
+            margin: 50px 0 0 0;
           }
           @media screen and (max-width: $smDesktopWidth) {
-            font-size: 18px;
-            margin-bottom: 46px;
+            margin: 46px 0 80px 0;
+          }
+          @media screen and (max-width: $phoneWidth) {
+            margin: 18px 0 80px 0;
           }
         }
       }

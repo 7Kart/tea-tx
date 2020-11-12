@@ -1,7 +1,7 @@
 <template>
   <div class="contact-item-container">
     <h4>{{ contactType }}</h4>
-    <p>{{ contactValue }}</p>
+    <a :href="typiedLink" class="default-text">{{ contactValue }}</a>
   </div>
 </template>
 
@@ -13,6 +13,20 @@ export default {
     },
     contactValue: {
       type: String
+    },
+    metaType:{
+      type:String,
+      default:""
+    }
+  },
+  computed:{
+    typiedLink(){
+      console.log('this.metaType', this.metaType);
+      if(this.metaType && this.metaType.length > 0){
+        return `${this.metaType}:${this.contactValue}`;
+      }else{
+        return this.contactType;
+      }
     }
   }
 }
@@ -44,7 +58,7 @@ export default {
       font-size: 26px;
     }
   }
-  p {
+  a {
     font-weight: bold;
     font-size: 26px;
     line-height: 176.9%;

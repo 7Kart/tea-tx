@@ -1,9 +1,10 @@
 <template>
   <div class="experince-container">
-    <firstSection @menuToggle="onMenuToggle" />
-    <secondSection />
-    <thirdSection />
-
+    <div class="section-container">
+      <firstSection @menuToggle="onMenuToggle" />
+      <secondSection />
+      <thirdSection />
+    </div>
     <footer-app />
   </div>
 </template>
@@ -47,6 +48,10 @@ export default {
 <style lang="scss" scoped>
 .experince-container {
   position: relative;
+  .section-container{
+    position: relative;
+    z-index: 30;
+  }
   .body-block {
     height: 4500px;
   }

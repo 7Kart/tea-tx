@@ -24,6 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 div {
+  cursor: pointer;
   text-align: center;
 }
 </style>

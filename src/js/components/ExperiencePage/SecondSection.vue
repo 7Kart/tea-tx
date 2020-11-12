@@ -31,59 +31,35 @@ section {
       rgba(30, 114, 69, 0.87) 100%
     ),
     #1a5a38;
-  // padding: 164px 0 0 0;
-  min-height: 100vh;
   position: relative;
   z-index: 30;
+
   @media screen and (max-width: $phoneWidth) {
     height: 100%;
   }
   .insta-page-container {
     height: 100%;
-    padding: 6% 0 2% 0;
-    @media screen and (max-width: $desktopHDWidth ) {
-      padding: 10% 0 5% 0;
-    }
+    padding: 185px 0 143px 0;
 
     @media screen and (max-width: $desktopLgWidth) {
-      padding: 15.3% 0 6% 0;
+      padding: 152px 0 152px 0;
     }
 
     @media screen and (max-width: $desktopWidth) {
-      padding: 15.1% 0 6% 0;
+      padding: 119px 0 82px 0;
     }
 
     @media screen and (max-width: $smDesktopWidth) {
-      padding: 11.8% 0 6% 0;
+      padding: 104px 0 80px 0;
     }
 
     @media screen and (max-width: $phoneWidth) {
-      padding: 8.3% 0 7.3% 0;
+      padding: 90px 0 80px 0;
     }
     .container-grid {
       height: auto;
       h2 {
-        font-family: 'Spectral';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 82px;
-        line-height: 100%;
         color: #ffffff;
-
-        @media screen and (max-width: $desktopLgWidth) {
-          font-size: 56px;
-          line-height: 100%;
-        }
-
-        @media screen and (max-width: $smDesktopWidth) {
-          font-size: 48px;
-          line-height: 100%;
-        }
-
-        @media screen and (max-width: $phoneWidth) {
-          font-size: 42px;
-          line-height: 100%;
-        }
       }
     }
   }

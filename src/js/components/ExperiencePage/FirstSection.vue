@@ -11,7 +11,7 @@
         <div class="sub-content-container">
           <div class="about-us-text-container">
             <h2>Наш Опыт</h2>
-            <p>
+            <p class="default-text">
               Жизнь в чае привела нас к жизни в Китае. Теперь, оглядываясь
               назад, можно увидеть как путь вел нас в эту. Жизнь в чае привела
               нас к жизни в Китае. Теперь, оглядываясь назад, можно увидеть как
@@ -160,62 +160,27 @@ section {
           margin-bottom: 14px;
         }
         h2 {
-          font-family: 'Spectral';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 82px;
-          line-height: 100%;
           color: #1a5a38;
-          @media screen and (max-width: $desktopLgWidth) {
-            font-size: 56px;
-            line-height: 100%;
-          }
-
-          @media screen and (max-width: $smDesktopWidth) {
-            font-size: 48px;
-            line-height: 100%;
-          }
-
-          @media screen and (max-width: $phoneWidth) {
-            font-size: 42px;
-            line-height: 100%;
-          }
         }
 
         p {
-          font-family: 'Spectral';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 21px;
-          line-height: 165%;
           padding-top: 116px;
           @media screen and (max-width: $desktopLgWidth) {
-            font-size: 18px;
-            line-height: 156%;
             padding-top: 60px;
           }
 
           @media screen and (max-width: $desktopWidth) {
-            font-size: 21px;
-            line-height: 165%;
             padding-top: 60px;
           }
 
           @media screen and (max-width: $smDesktopWidth) {
             padding-top: 38px;
-            font-size: 18px;
-            line-height: 156%;
           }
 
           @media screen and (max-width: $phoneWidth) {
             padding-top: 42px;
-            font-size: 18px;
-            line-height: 156%;
           }
         }
-        // @media screen and (max-width: $smDesktopWidth) {
-        //   margin-left: 0;
-        // }
       }
     }
   }

@@ -47,6 +47,7 @@ export default {
   border: 2px solid #30a667;
   width: 208px;
   height: 208px;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,8 +61,13 @@ export default {
     transition: border 0.2s ease;
   }
   @media screen and (max-width: $smDesktopWidth) {
-    width: 200px;
-    height: 200px;
+    width: 160px;
+    height: 160px;
+  }
+
+  @media screen and (max-width: $tableWidth) {
+    width: 160px;
+    height: 160px;
   }
 
   @media screen and (max-width: $smTableWidth) {
@@ -70,8 +76,14 @@ export default {
     margin-top: 80px;
   }
 
+  @media screen and (max-width: $smPhoneWidth) {
+    width: 115px;
+    height: 115px;
+  }
+
   @media screen and (max-width: $phoneWidth) {
-    margin-top: 50px;
+    margin: auto 0;
+    // margin-bottom: 30%;
   }
 
   svg {
@@ -88,7 +100,7 @@ export default {
     text-align: center;
     font-family: 'Raleway';
     font-weight: bold;
-    letter-spacing:1px;
+    letter-spacing: 1px;
     @media screen and (max-width: $smTableWidth) {
       font-size: 15px !important;
       line-height: 138% !important;
